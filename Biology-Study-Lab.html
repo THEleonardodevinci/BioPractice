@@ -1,0 +1,2351 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#155c4c"><title>Biology Study Lab</title>
+<style>
+:root{--ink:#172e2a;--muted:#526861;--green:#155c4c;--mint:#e2efe7;--paper:#f6f5ef;--line:#d4dfd7;--red:#963b38;--purple:#62548c}*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.55 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}button,select,input,textarea{font:inherit}button,select{cursor:pointer}button,a,select,input,textarea{touch-action:manipulation}button{background:#fff;border:1px solid var(--line);color:var(--ink);padding:11px 17px;border-radius:12px;min-height:46px;font-weight:600}button:hover{border-color:var(--green);background:#edf3ee}button:disabled{opacity:.5;cursor:default}button.primary{background:var(--green);color:white;border-color:var(--green)}button.primary:hover{background:#0e483b}button.ghost{background:transparent;border-color:transparent}button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid #9d79cc;outline-offset:3px}a{color:var(--green)}header{background:#fff;border-bottom:1px solid var(--line)}.topbar{max-width:1120px;margin:auto;display:flex;align-items:center;justify-content:space-between;padding:20px 26px;gap:15px}.brand{font-weight:800;letter-spacing:-.5px;font-size:21px;display:flex;gap:10px;align-items:center}.logo{display:grid;place-items:center;background:var(--green);color:#fff;width:38px;height:38px;border-radius:12px;font-size:24px}.small,.eyebrow{font-size:13px;color:var(--muted)}.eyebrow{text-transform:uppercase;letter-spacing:1.7px;font-weight:700}.learner{display:flex;gap:9px;align-items:center}select{border:1px solid var(--line);border-radius:9px;padding:10px;background:#fff;max-width:100%;color:var(--ink)}nav{max-width:1120px;margin:auto;display:flex;gap:8px;padding:0 26px 14px;flex-wrap:wrap}nav button{background:transparent;border-color:transparent;min-height:42px;padding:8px 14px}nav button.active{background:var(--mint);color:var(--green)}main{max-width:1068px;margin:35px auto;padding:0 24px 60px}h1{font-size:clamp(30px,5vw,49px);line-height:1.1;letter-spacing:-1.8px;font-weight:750;margin:12px 0 18px;max-width:750px}h2{font-size:25px;line-height:1.3;letter-spacing:-.6px;margin:10px 0 15px}h3{font-size:18px;margin:0 0 10px}p{margin:10px 0 18px}.muted{color:var(--muted)}.hero{display:grid;grid-template-columns:1.45fr 1fr;gap:35px;align-items:center;margin:18px 0 30px}.hero-art{background:var(--mint);border-radius:28px;padding:26px;position:relative}.hero-art strong{font-size:22px;display:block;margin-bottom:14px}.chain{display:flex;gap:6px;align-items:center;margin:25px 0}.chain span{border-radius:50%;width:40px;height:40px;display:grid;place-items:center;background:var(--green);color:#fff;font-size:12px}.chain i{height:3px;flex:1;background:#83ae9a}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}.card{background:#fff;border:1px solid var(--line);border-radius:20px;padding:25px}.mode{display:flex;flex-direction:column;align-items:flex-start}.mode p{flex:1;color:var(--muted);font-size:15px}.number{font-size:13px;color:var(--purple);font-weight:700;margin-bottom:15px}.row{display:flex;flex-wrap:wrap;gap:12px;align-items:center}.between{justify-content:space-between}.section{margin-top:30px}.chips{display:flex;gap:8px;flex-wrap:wrap;margin:15px 0}.chip{font-size:14px;border-radius:24px;padding:8px 13px;min-height:40px}.chip.selected{background:var(--green);color:white;border-color:var(--green)}.notice{border-left:3px solid #a8beb1;padding:8px 15px;font-size:14px;color:var(--muted);margin-top:24px}.pill{display:inline-block;font-size:12px;font-weight:700;letter-spacing:.5px;border-radius:20px;padding:5px 11px;background:var(--mint);color:var(--green)}.question{max-width:830px;margin:auto}.question h2{font-size:25px;margin-top:23px}.progress{height:7px;background:#dce6df;border-radius:10px;overflow:hidden;margin:16px 0 24px}.progress span{display:block;background:var(--green);height:100%}.options{display:grid;gap:10px;margin:23px 0}.option{text-align:left;width:100%;font-weight:500;display:flex;gap:13px;align-items:flex-start;border-radius:12px;padding:15px}.letter{background:#edf0e9;border-radius:6px;min-width:28px;height:28px;text-align:center;font-size:13px;padding-top:3px;font-weight:700}.option.selected{border:2px solid var(--green);padding:14px;background:#edf5ef}.option.correct{border:2px solid var(--green);padding:14px;background:#e5f2e8}.option.wrong{border:2px solid var(--red);padding:14px;background:#fbeeed}.option:disabled{opacity:1;color:var(--ink)}.feedback{background:#e5f2e8;border-radius:14px;padding:20px;margin:18px 0}.feedback.wrong{background:#fbeeed}.feedback p:last-child{margin-bottom:0}.flash{min-height:285px;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:35px}.flash h2{max-width:700px}.flash .visual{width:100%}.answer{font-size:24px;color:var(--green);font-weight:700}.visual{background:#f6f8f4;border:1px solid var(--line);border-radius:12px;padding:18px;margin:18px 0;overflow-x:auto}.visual p{margin:6px 0}.visual svg{width:100%;height:auto;max-height:280px;display:block}.chemical{font:500 clamp(13px,2.3vw,19px)/2.2 ui-monospace,monospace;white-space:nowrap;text-align:center}.chemical b{border-bottom:3px solid var(--purple);position:relative;padding-bottom:18px}.chemical b small{position:absolute;top:10px;left:0;width:100%;font:12px system-ui;color:var(--purple)}table{border-collapse:collapse;width:100%;font-size:14px}th,td{padding:9px 7px;text-align:left;border-bottom:1px solid var(--line)}th{font-weight:650}.metrics{display:flex;flex-wrap:wrap;gap:35px;margin:20px 0}.metric strong{display:block;font-size:37px;letter-spacing:-1px}.metric span{font-size:13px;color:var(--muted)}details{margin:12px 0;border-bottom:1px solid var(--line);padding-bottom:13px}summary{cursor:pointer;font-weight:600;padding:8px 0;min-height:44px}textarea{width:100%;min-height:160px;border:1px solid var(--line);border-radius:12px;padding:15px;resize:vertical;background:#fff;color:var(--ink)}.stack{display:grid;gap:15px}.topic-row{display:grid;grid-template-columns:1fr auto;gap:8px;padding:12px 0;border-bottom:1px solid var(--line)}.topic-row .progress{grid-column:1/-1;margin:0;height:6px}.score{font-size:70px;line-height:1.1;font-weight:750;letter-spacing:-3px;color:var(--green)}.legend{font-size:13px;color:var(--muted);margin-top:8px}.hint{background:#f2edfa;padding:14px;border-radius:12px;margin-top:14px}footer{max-width:1068px;margin:0 auto;padding:0 24px 28px;color:var(--muted);font-size:12px}label{display:block}input[type=range]{width:100%;accent-color:var(--green)}.two{display:grid;grid-template-columns:1fr 1fr;gap:20px}.empty{padding:30px;text-align:center}.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}.kbd{font-size:12px;color:var(--muted)}@media(max-width:720px){.hero{grid-template-columns:1fr;gap:20px}.hero-art{display:none}.grid,.two{grid-template-columns:1fr}.mode{padding:20px}.mode p{margin-top:0}.number{margin-bottom:5px}main{margin-top:24px;padding:0 16px 40px}.topbar{padding:15px 16px}.brand{font-size:18px}.learner label{display:none}nav{padding:0 10px 12px;gap:2px}nav button{padding:8px 10px;font-size:14px}.card{padding:20px}.question h2{font-size:22px}.flash{padding:22px}.metrics{gap:23px}.visual{padding:10px}th,td{padding:8px 5px;font-size:12px}}@media print{header,footer,button,.chips{display:none}body{background:white}main{max-width:none}.card{break-inside:avoid}details{display:block}details>*{display:block}}
+.arcade-hero{background:#192842;color:#fff;padding:35px;border-radius:24px;background-image:radial-gradient(ellipse at top right,#554576,transparent 65%)}.arcade-hero .eyebrow{color:#c7d6f3}.arcade-hero p{max-width:600px;color:#e0e8f4}.arcade-pill{padding:7px 14px;border-radius:20px;background:#344561;color:#fff;font-size:14px}.game-card{position:relative;overflow:hidden;display:flex;flex-direction:column;align-items:flex-start}.game-card p{flex:1}.game-icon{font-size:43px;line-height:1.3;margin:10px 0 17px}.game-finish{text-align:center}.game-finish h1{margin:18px auto}.game-finish .row{justify-content:center}.game-trophy{font-size:75px}.arena{padding:24px;background:#222e4c;color:#fff;border-radius:22px;text-align:center}.arena h2{color:#fff}.arena p{color:#d4ddf2}.monster{font-size:88px;line-height:1.3;padding:10px}.monster-hit{animation:bop .25s ease-out}.boss-meter{background:#48516b;height:13px;border-radius:20px;overflow:hidden;margin:10px 0 20px}.boss-meter span{display:block;height:100%;background:#c8a5ff;transition:width .3s}.room-map{display:flex;gap:8px}.room-map>span{flex:1;padding:12px 4px;background:#e5e8e5;text-align:center;border-radius:12px;font-weight:750;color:#50625a}.room-map small{display:block;font-size:11px;font-weight:500}.room-map .current{background:#192842;color:#fff}.room-map .done{background:#d0ead9;color:#155c4c}.lock-input{font:inherit;border:1px solid #b2c4b8;border-radius:10px;padding:12px;color:#172e2a;background:#fff;max-width:100%;min-width:0}.escape-room .lock-input{width:170px}.escape-room label{margin:14px 0 7px;font-weight:600}.ingredients{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.ingredient{background:#f0f4ef;border-radius:13px;padding:13px;display:flex;flex-direction:column;justify-content:space-between;gap:10px}.ingredient strong{font-size:14px}.ingredient .row{gap:8px;justify-content:space-between;flex-wrap:nowrap}.ingredient button{min-width:42px;padding:7px}.ingredient output{font-size:22px;font-weight:700}.two select,.two .lock-input{width:100%;display:block;margin-top:7px}.reaction-product{font-size:24px;overflow-wrap:anywhere;letter-spacing:2px}.memory-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}.memory-card{min-height:150px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;background:#253456;color:#fff;border:2px solid transparent;padding:16px;transition:background .18s;line-height:1.35}.memory-card:hover{background:#364966;color:#fff}.memory-card:disabled{opacity:1}.memory-card small{font-size:10px;letter-spacing:1.1px}.memory-card span{font-size:14px}.memory-card.flipped{background:#fff;color:#172e2a;border-color:#afa1c9}.memory-card.matched{background:#e0efdf;color:#155c4c;border-color:transparent}.memory-card .card-back{font-size:42px;color:#cfc1f5}.arcade-banner{margin:25px 0;padding:20px;background:#e9e3f5;border-radius:18px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}.arcade-banner p{margin:2px 0;color:#55496a}.arcade-banner strong{font-size:19px}@keyframes bop{50%{transform:translateY(-6px) rotate(4deg)}}@media(prefers-reduced-motion:reduce){.monster-hit{animation:none}.boss-meter span,.memory-card{transition:none}}@media(max-width:720px){.arcade-hero{padding:24px}.ingredients{grid-template-columns:repeat(2,minmax(0,1fr))}.memory-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}.memory-card{padding:9px;min-height:144px}.memory-card span{font-size:12px}.memory-card small{font-size:9px;letter-spacing:.6px}.room-map{gap:5px}.arena{padding:18px}.game-card .row{align-items:flex-start}}@media(max-width:380px){.memory-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.memory-card span{font-size:14px}}
+.challenge-banner{background:#e2ecef;border-radius:16px;padding:22px;margin:24px 0;display:flex;gap:18px;align-items:center;justify-content:space-between;flex-wrap:wrap}.challenge-banner p{margin:7px 0;max-width:620px}.reasoning{text-align:left;margin-top:20px}.reasoning li{margin:10px 0}.reasoning h3{margin-top:20px}#study-level{display:block;margin-top:7px;width:100%}</style></head><body>
+<header><div class="topbar"><div class="brand"><span class="logo" aria-hidden="true">β</span>Biology Study Lab</div><div class="learner"><label for="learner" class="small">Studying as</label><select id="learner" aria-label="Learner"><option value="1">Learner 1</option><option value="2">Learner 2</option><option value="3">Learner 3</option></select></div></div><nav aria-label="Study modes" id="nav"></nav></header>
+<main id="main"></main><footer>Based on readable topics in your practice-test video. Original practice questions, not a transcription or an official exam. Progress stays in this browser; each learner has a separate record. No account, payment, or AI service is needed for the downloaded app.<span id="storage-warning"></span></footer>
+<script>
+'use strict';
+const BANK=[
+  {
+    "id": "q001",
+    "topic": "Enzymes",
+    "prompt": "Pepsin is most active near pH 2, while trypsin is most active near pH 8. What does this show?",
+    "options": [
+      "Different enzymes can have different optimal pH values.",
+      "High pH always means more enzyme molecules.",
+      "All enzymes work best in acid.",
+      "Trypsin must be a carbohydrate."
+    ],
+    "answers": [
+      0
+    ],
+    "explain": "Activity measures reaction rate, not enzyme quantity. Different active sites function best under different pH conditions.",
+    "hint": "Distinguish the amount of an enzyme from how well it functions.",
+    "visual": null,
+    "multi": false
+  },
+  {
+    "id": "q002",
+    "topic": "Enzymes",
+    "prompt": "A typical human digestive enzyme is boiled for 10 minutes and then cooled. Why is its activity likely much lower?",
+    "options": [
+      "Heat disrupted its shape and active site.",
+      "All of the enzyme was converted into product.",
+      "Cooling permanently removes all substrate.",
+      "Heat changed it into a lipid."
+    ],
+    "answers": [
+      0
+    ],
+    "explain": "High heat can denature a protein, disrupting the structure needed for substrate binding and catalysis. Cooling does not necessarily restore its original fold.",
+    "hint": "Consider the relationship between shape and function.",
+    "visual": null,
+    "multi": false
+  },
+  {
+    "id": "q003",
+    "topic": "Enzymes",
+    "prompt": "What does an enzyme do to the activation energy of a reaction?",
+    "options": [
+      "Lowers it",
+      "Raises it",
+      "Eliminates the need for reactants",
+      "Changes it into stored genetic information"
+    ],
+    "answers": [
+      0
+    ],
+    "explain": "An enzyme supplies a reaction pathway with lower activation energy. It does not change the overall free-energy difference between reactants and products.",
+    "hint": "Identify what is changing, then connect it to the biological mechanism.",
+    "visual": null,
+    "multi": false
+  },
+  {
+    "id": "q004",
+    "topic": "Enzymes",
+    "prompt": "After an enzyme releases its products, what usually happens to the enzyme?",
+    "options": [
+      "It can catalyze another reaction.",
+      "It becomes one of the products.",
+      "It loses all of its atoms.",
+      "It is permanently used up."
+    ],
+    "answers": [
+      0
+    ],
+    "explain": "Enzymes are catalysts: they participate in the reaction but are regenerated and can be used again.",
+    "hint": "Identify what is changing, then connect it to the biological mechanism.",
+    "visual": null,
+    "multi": false
+  },
+  {
+    "id": "q005",
+    "topic": "Enzymes",
+    "prompt": "Lactase breaks lactose down but does not break starch down. What best explains this?",
+    "options": [
+      "Its active site is suited to lactose.",
+      "Lactase is used up by starch.",
+      "Starch contains no chemical bonds.",
+      "All sugars have identical shapes."
+    ],
+    "answers": [
+      0
+    ],
+    "explain": "Enzyme specificity depends on the active site’s shape and chemical properties, which favor particular substrates.",
+    "hint": "Identify what is changing, then connect it to the biological mechanism.",
+    "visual": null,
+    "multi": false
+  },
+  {
+    "id": "q006",
+    "topic": "Enzymes",
+    "prompt": "An enzyme reaction stops producing additional product. Adding more substrate restarts it. What was the likely limitation?",
+    "options": [
+      "Available substrate had been depleted.",
+      "The enzyme had been completely destroyed.",
+      "The product had become the enzyme.",
+      "Activation energy had become zero."
+    ],
+    "answers": [
+      0
+    ],
+    "explain": "Restarting after substrate is added supports substrate depletion. It also shows that functional enzyme remains.",
+    "hint": "Identify what is changing, then connect it to the biological mechanism.",
+    "visual": null,
+    "multi": false
+  },
+  {
+    "id": "q007",
+    "topic": "Enzymes",
+    "prompt": "With abundant substrate, adding more working enzyme will usually do what to the initial reaction rate?",
+    "options": [
+      "Increase it",
+      "Stop the reaction",
+      "Make it negative",
+      "Leave it unchanged under all conditions"
+    ],
+    "answers": [
+      0
+    ],
+    "explain": "More working enzyme provides more active sites, so more substrate molecules can be converted per unit time when substrate is abundant.",
+    "hint": "Identify what is changing, then connect it to the biological mechanism.",
+    "visual": null,
+    "multi": false
+  },
+  {
+    "id": "q008",
+    "topic": "Enzymes",
+    "prompt": "Why can a reaction rate level off as substrate concentration keeps increasing?",
+    "options": [
+      "The available enzyme active sites become saturated.",
+      "All substrate has disappeared.",
+      "Every enzyme molecule becomes a product.",
+      "Substrate always destroys enzymes."
+    ],
+    "answers": [
+      0
+    ],
+    "explain": "At saturation, enzyme molecules are working near their maximum rate. More substrate alone cannot add more active sites.",
+    "hint": "Identify what is changing, then connect it to the biological mechanism.",
+    "visual": null,
+    "multi": false
+  },
+  {
+    "id": "q009",
+    "topic": "Enzymes",
+    "prompt": "Which statements about enzymes are accurate? Select all that apply.",
+    "options": [
+      "They can be reused.",
+      "Their activity can depend on pH.",
+      "They lower activation energy.",
+      "They are always consumed as products."
+    ],
+    "answers": [
+      0,
+      1,
+      2
+    ],
+    "explain": "Catalysts are regenerated, and enzyme shape and charge can be affected by pH. They lower the activation barrier without being consumed.",
+    "hint": "There is more than one correct statement.",
+    "visual": null,
+    "multi": true,
+    "flashPrompt": "Describe three important properties of enzymes: reuse, pH sensitivity, and activation energy."
+  },
+  {
+    "id": "q010",
+    "topic": "Enzymes",
+    "prompt": "A refrigerator slows the activity of a typical human enzyme. Which statement is best?",
+    "options": [
+      "Lower temperature usually slows molecular motion and collisions.",
+      "Cold always cuts every peptide bond.",
+      "The enzyme necessarily becomes permanently denatured.",
+      "The reaction must speed up because particles are closer."
+    ],
+    "answers": [
+      0
+    ],
+    "explain": "Moderate cooling usually slows enzyme reactions without necessarily causing permanent denaturation. Do not treat cooling and boiling as equivalent.",
+    "hint": "Identify what is changing, then connect it to the biological mechanism.",
+    "visual": null,
+    "multi": false
+  },
+  {
+    "id": "q011",
+    "topic": "Molecules",
+    "prompt": "Which molecule class is a common immediate energy source for cells?",
+    "options": [
+      "Carbohydrates",
+      "Nucleic acids",
+      "Antibodies",
+      "Phospholipid head groups"
+    ],
+    "answers": [
+      0
+    ],
+    "explain": "Sugars such as glucose are carbohydrates used as fuel. Lipids also store energy, but phospholipids are primarily membrane components.",
+    "hint": "Identify what is changing, then connect it to the biological mechanism.",
+    "visual": null,
+    "multi": false
+  },
+  {
+    "id": "q012",
+    "topic": "Molecules",
+    "prompt": "A molecule has a phosphate-containing head and two long fatty-acid tails. What is it?",
+    "options": [
+      "A phospholipid",
+      "An amino acid",
+      "A monosaccharide",
+      "Carbon dioxide"
+    ],
+    "answers": [
+      0
+    ],
+    "explain": "A phospholipid has a polar head and nonpolar tails. This structure helps it form the lipid bilayer of cell membranes.",
+    "hint": "Look for one water-attracting end and two water-avoiding tails.",
+    "visual": "phospholipid",
+    "multi": false
+  },
+  {
+    "id": "q013",
+    "topic": "Molecules",
+    "prompt": "Which group includes many catalysts, transporters, antibodies, and structural components?",
+    "options": [
+      "Proteins",
+      "Monosaccharides",
+      "Carbon dioxide molecules",
+      "Triglycerides"
+    ],
+    "answers": [
+      0
+    ],
+    "explain": "Proteins perform many functions, including catalysis, transport, defense, signaling, and structural support.",
+    "hint": "Identify what is changing, then connect it to the biological mechanism.",
+    "visual": null,
+    "multi": false
+  },
+  {
+    "id": "q014",
+    "topic": "Molecules",
+    "prompt": "Which element occurs in the amino group of amino acids but is absent from a typical simple sugar such as glucose?",
+    "options": [
+      "Nitrogen",
+      "Carbon",
+      "Hydrogen",
+      "Oxygen"
+    ],
+    "answers": [
+      0
+    ],
+    "explain": "Amino groups contain nitrogen. Glucose contains carbon, hydrogen, and oxygen but no nitrogen.",
+    "hint": "Identify what is changing, then connect it to the biological mechanism.",
+    "visual": null,
+    "multi": false
+  },
+  {
+    "id": "q015",
+    "topic": "Molecules",
+    "prompt": "Which of these is generally classified as inorganic?",
+    "options": [
+      "Carbon dioxide",
+      "Glucose",
+      "An amino acid",
+      "A triglyceride"
+    ],
+    "answers": [
+      0
+    ],
+    "explain": "Carbon dioxide is a carbon-containing inorganic compound. Containing carbon alone does not make every compound organic.",
+    "hint": "Identify what is changing, then connect it to the biological mechanism.",
+    "visual": null,
+    "multi": false
+  },
+  {
+    "id": "q016",
+    "topic": "Molecules",
+    "prompt": "What are the building blocks of a protein?",
+    "options": [
+      "Amino acids",
+      "Monosaccharides",
+      "Fatty acids only",
+      "Nucleotides"
+    ],
+    "answers": [
+      0
+    ],
+    "explain": "A protein is built from amino acids linked into a polypeptide by peptide bonds.",
+    "hint": "Identify what is changing, then connect it to the biological mechanism.",
+    "visual": null,
+    "multi": false
+  },
+  {
+    "id": "q017",
+    "topic": "Molecules",
+    "prompt": "What are the building blocks of nucleic acids such as DNA?",
+    "options": [
+      "Nucleotides",
+      "Amino acids",
+      "Glycerol molecules",
+      "Monosaccharides alone"
+    ],
+    "answers": [
+      0
+    ],
+    "explain": "DNA and RNA are nucleic-acid polymers made from nucleotides. Each nucleotide contains a sugar, phosphate, and nitrogenous base.",
+    "hint": "Identify what is changing, then connect it to the biological mechanism.",
+    "visual": null,
+    "multi": false
+  },
+  {
+    "id": "q018",
+    "topic": "Molecules",
+    "prompt": "A long hydrocarbon chain ending in a carboxyl group is characteristic of which building block?",
+    "options": [
+      "A fatty acid",
+      "A nucleotide",
+      "A peptide",
+      "A monosaccharide"
+    ],
+    "answers": [
+      0
+    ],
+    "explain": "A fatty acid has a largely nonpolar hydrocarbon chain and a carboxyl group at one end.",
+    "hint": "Identify what is changing, then connect it to the biological mechanism.",
+    "visual": null,
+    "multi": false
+  },
+  {
+    "id": "q019",
+    "topic": "Molecules",
+    "prompt": "Which description matches a triglyceride?",
+    "options": [
+      "Glycerol attached to three fatty acids",
+      "A phosphate head with two fatty-acid tails",
+      "A chain of amino acids",
+      "Two nucleotide strands"
+    ],
+    "answers": [
+      0
+    ],
+    "explain": "Triglycerides are fats used for energy storage and insulation. Phospholipids instead usually contain two fatty-acid tails and a phosphate-containing head.",
+    "hint": "Identify what is changing, then connect it to the biological mechanism.",
+    "visual": null,
+    "multi": false
+  },
+  {
+    "id": "q020",
+    "topic": "Molecules",
+    "prompt": "Which statements about phospholipid membranes are accurate? Select all that apply.",
+    "options": [
+      "Polar heads face water.",
+      "Nonpolar tails tend to face inward, away from water.",
+      "Both tails and heads strongly attract water.",
+      "The membrane consists only of amino acids."
+    ],
+    "answers": [
+      0,
+      1
+    ],
+    "explain": "In a bilayer, hydrophilic heads face the watery surroundings on both sides, while hydrophobic tails cluster in the interior.",
+    "hint": "Identify what is changing, then connect it to the biological mechanism.",
+    "visual": null,
+    "multi": true,
+    "flashPrompt": "How are phospholipid heads and tails arranged in a membrane bilayer?"
+  },
+  {
+    "id": "q021",
+    "topic": "Proteins",
+    "prompt": "Which labeled bond in this simplified dipeptide is a peptide bond?",
+    "options": [
+      "B: the carbonyl-carbon–nitrogen bond",
+      "A: the nitrogen–alpha-carbon bond",
+      "C: the nitrogen–alpha-carbon bond after the link",
+      "D: the alpha-carbon–carboxyl-carbon bond"
+    ],
+    "answers": [
+      0
+    ],
+    "explain": "A peptide bond is the C–N link in –C(=O)–NH– between amino-acid residues. A peptidase hydrolyzes this link.",
+    "hint": "Find the carbon double-bonded to oxygen and the nitrogen directly bonded to it.",
+    "visual": "peptide",
+    "multi": false
+  },
+  {
+    "id": "q022",
+    "topic": "Proteins",
+    "prompt": "What defines a protein’s primary structure?",
+    "options": [
+      "Its amino-acid sequence",
+      "The arrangement of several protein subunits",
+      "Its complete three-dimensional fold",
+      "Only its alpha helices and beta sheets"
+    ],
+    "answers": [
+      0
+    ],
+    "explain": "Primary structure is the amino-acid order, maintained by covalent peptide bonds.",
+    "hint": "Identify what is changing, then connect it to the biological mechanism.",
+    "visual": null,
+    "multi": false
+  },
+  {
+    "id": "q023",
+    "topic": "Proteins",
+    "prompt": "Interactions among R groups within one polypeptide mainly stabilize which level of protein structure?",
+    "options": [
+      "Tertiary",
+      "Primary",
+      "Secondary only",
+      "Quaternary only"
+    ],
+    "answers": [
+      0
+    ],
+    "explain": "Tertiary structure is the overall three-dimensional shape of one polypeptide. R-group interactions include hydrophobic interactions, ionic attractions, hydrogen bonds, and sometimes disulfide bonds.",
+    "hint": "Identify what is changing, then connect it to the biological mechanism.",
+    "visual": null,
+    "multi": false
+  },
+  {
+    "id": "q024",
+    "topic": "Proteins",
+    "prompt": "Alpha helices and beta sheets are examples of which level of protein structure?",
+    "options": [
+      "Secondary",
+      "Primary",
+      "Quaternary",
+      "The nucleotide sequence"
+    ],
+    "answers": [
+      0
+    ],
+    "explain": "Secondary structures are local folding patterns stabilized by hydrogen bonds involving the polypeptide backbone.",
+    "hint": "Identify what is changing, then connect it to the biological mechanism.",
+    "visual": null,
+    "multi": false
+  },
+  {
+    "id": "q025",
+    "topic": "Proteins",
+    "prompt": "A functional protein contains four folded polypeptide subunits. Their arrangement is its…",
+    "options": [
+      "Quaternary structure",
+      "Primary structure",
+      "Secondary structure",
+      "Monosaccharide structure"
+    ],
+    "answers": [
+      0
+    ],
+    "explain": "Quaternary structure describes how multiple polypeptide subunits associate. One polypeptide can have tertiary structure without having quaternary structure.",
+    "hint": "Identify what is changing, then connect it to the biological mechanism.",
+    "visual": null,
+    "multi": false
+  },
+  {
+    "id": "q026",
+    "topic": "Proteins",
+    "prompt": "What distinguishes one type of amino acid from another?",
+    "options": [
+      "Its R group, or side chain",
+      "Whether it has any carbon",
+      "Whether it can contain nitrogen",
+      "The total absence of a carboxyl group"
+    ],
+    "answers": [
+      0
+    ],
+    "explain": "Amino acids share an amino group, a carboxyl group, and an alpha carbon. Their R groups differ in size, charge, and polarity.",
+    "hint": "Identify what is changing, then connect it to the biological mechanism.",
+    "visual": null,
+    "multi": false
+  },
+  {
+    "id": "q027",
+    "topic": "Proteins",
+    "prompt": "A protein unfolds when heated, but its peptide bonds remain intact. What remains unchanged?",
+    "options": [
+      "Its primary structure",
+      "Its full tertiary structure",
+      "Its active-site shape in every case",
+      "Its biological function in every case"
+    ],
+    "answers": [
+      0
+    ],
+    "explain": "Unfolding can disrupt secondary and tertiary structure while leaving the amino-acid sequence intact. Denaturation is not the same as hydrolysis of peptide bonds.",
+    "hint": "Identify what is changing, then connect it to the biological mechanism.",
+    "visual": null,
+    "multi": false
+  },
+  {
+    "id": "q028",
+    "topic": "Proteins",
+    "prompt": "Why can a change in an amino-acid sequence change protein function?",
+    "options": [
+      "It can change side-chain interactions and folding.",
+      "It always converts the protein into DNA.",
+      "Every substitution removes all nitrogen.",
+      "Amino-acid order has no connection to shape."
+    ],
+    "answers": [
+      0
+    ],
+    "explain": "Sequence influences folding and chemical properties. A substitution may affect function, though not every substitution has a large effect.",
+    "hint": "Identify what is changing, then connect it to the biological mechanism.",
+    "visual": null,
+    "multi": false
+  },
+  {
+    "id": "q029",
+    "topic": "Building & breaking",
+    "prompt": "Two amino acids join in a simplified dehydration reaction. Where do the H and OH in the released water come from?",
+    "options": [
+      "An H from an amino group and an OH from a carboxyl group",
+      "Both from the R group of one amino acid",
+      "Both from an enzyme that is consumed",
+      "The carbon atoms turn into H and OH"
+    ],
+    "answers": [
+      0
+    ],
+    "explain": "In the introductory condensation model, the carboxyl group contributes OH and the amino group contributes H as the peptide link forms. Actual cellular peptide synthesis uses activated intermediates.",
+    "hint": "Identify the two functional groups that form the link.",
+    "visual": null,
+    "multi": false
+  },
+  {
+    "id": "q030",
+    "topic": "Building & breaking",
+    "prompt": "Which equation represents dehydration synthesis?",
+    "options": [
+      "Monomer + monomer → linked pair + H₂O",
+      "Linked pair + H₂O → monomer + monomer",
+      "Monomer + H₂O → oxygen only",
+      "Linked pair → linked pair + carbon dioxide"
+    ],
+    "answers": [
+      0
+    ],
+    "explain": "Dehydration synthesis forms a covalent link with a net loss of water in the simplified model; hydrolysis uses water to break a link.",
+    "hint": "Identify what is changing, then connect it to the biological mechanism.",
+    "visual": null,
+    "multi": false
+  },
+  {
+    "id": "q031",
+    "topic": "Building & breaking",
+    "prompt": "Which equation represents hydrolysis?",
+    "options": [
+      "Linked pair + H₂O → monomer + monomer",
+      "Monomer + monomer → linked pair + H₂O",
+      "Monomer → linked pair without another monomer",
+      "H₂O → a protein"
+    ],
+    "answers": [
+      0
+    ],
+    "explain": "Hydrolysis uses the components of water to break a covalent bond and supply H and OH to the resulting pieces.",
+    "hint": "Identify what is changing, then connect it to the biological mechanism.",
+    "visual": null,
+    "multi": false
+  },
+  {
+    "id": "q032",
+    "topic": "Building & breaking",
+    "prompt": "A peptidase breaks a dipeptide into two amino acids. What reaction occurs?",
+    "options": [
+      "Hydrolysis of a peptide bond",
+      "Dehydration synthesis of a peptide bond",
+      "Formation of a hydrogen bond between water molecules",
+      "Creation of a phospholipid"
+    ],
+    "answers": [
+      0
+    ],
+    "explain": "A peptidase catalyzes peptide-bond hydrolysis, splitting the polypeptide into smaller units.",
+    "hint": "Identify what is changing, then connect it to the biological mechanism.",
+    "visual": null,
+    "multi": false
+  },
+  {
+    "id": "q033",
+    "topic": "Building & breaking",
+    "prompt": "In the simplified condensation model, five free amino acids form one linear chain. How many waters are released?",
+    "options": [
+      "4",
+      "5",
+      "6",
+      "10"
+    ],
+    "answers": [
+      0
+    ],
+    "explain": "Five units need four links to make one linear chain. One water is released per new peptide link in the simplified dehydration model.",
+    "hint": "Count links between units, not the units themselves.",
+    "visual": null,
+    "multi": false
+  },
+  {
+    "id": "q034",
+    "topic": "Building & breaking",
+    "prompt": "A linear chain of six amino acids is completely hydrolyzed. How many peptide bonds are broken?",
+    "options": [
+      "5",
+      "6",
+      "3",
+      "12"
+    ],
+    "answers": [
+      0
+    ],
+    "explain": "A linear chain with n amino-acid residues has n − 1 peptide bonds, so six residues have five links.",
+    "hint": "Identify what is changing, then connect it to the biological mechanism.",
+    "visual": null,
+    "multi": false
+  },
+  {
+    "id": "q035",
+    "topic": "Building & breaking",
+    "prompt": "Which reaction breaks a carbohydrate polymer into smaller sugar units using water?",
+    "options": [
+      "Hydrolysis",
+      "Dehydration synthesis",
+      "Protein folding",
+      "Hydrogen bonding alone"
+    ],
+    "answers": [
+      0
+    ],
+    "explain": "Hydrolysis breaks covalent links between sugar units. Digestion commonly uses enzyme-catalyzed hydrolysis.",
+    "hint": "Identify what is changing, then connect it to the biological mechanism.",
+    "visual": null,
+    "multi": false
+  },
+  {
+    "id": "q036",
+    "topic": "Building & breaking",
+    "prompt": "Two glucose molecules, each C₆H₁₂O₆, form one disaccharide with loss of one water. What is its formula?",
+    "options": [
+      "C₁₂H₂₂O₁₁",
+      "C₁₂H₂₄O₁₂",
+      "C₆H₁₀O₅",
+      "C₁₂H₂₆O₁₃"
+    ],
+    "answers": [
+      0
+    ],
+    "explain": "Add both glucose formulas to get C₁₂H₂₄O₁₂, then subtract H₂O to obtain C₁₂H₂₂O₁₁.",
+    "hint": "Identify what is changing, then connect it to the biological mechanism.",
+    "visual": null,
+    "multi": false
+  },
+  {
+    "id": "q037",
+    "topic": "Water & pH",
+    "prompt": "What type of bond holds an oxygen atom and a hydrogen atom together within a water molecule?",
+    "options": [
+      "Polar covalent",
+      "Hydrogen bond",
+      "Ionic attraction between separate water molecules",
+      "Peptide bond"
+    ],
+    "answers": [
+      0
+    ],
+    "explain": "Oxygen and hydrogen share electrons unequally in a polar covalent bond. Hydrogen bonds are attractions between suitable partial charges, such as between separate water molecules.",
+    "hint": "Identify what is changing, then connect it to the biological mechanism.",
+    "visual": null,
+    "multi": false
+  },
+  {
+    "id": "q038",
+    "topic": "Water & pH",
+    "prompt": "A partially positive hydrogen in one water molecule is attracted to the partially negative oxygen of another. What is this?",
+    "options": [
+      "A hydrogen bond",
+      "A peptide bond",
+      "A covalent O–H bond within one molecule",
+      "A carbon–carbon bond"
+    ],
+    "answers": [
+      0
+    ],
+    "explain": "This intermolecular attraction is a hydrogen bond. It is different from the covalent O–H bonds inside each water molecule.",
+    "hint": "Identify what is changing, then connect it to the biological mechanism.",
+    "visual": null,
+    "multi": false
+  },
+  {
+    "id": "q039",
+    "topic": "Water & pH",
+    "prompt": "Why is water polar?",
+    "options": [
+      "Its electrons are shared unequally, and its bent shape produces an uneven charge distribution.",
+      "Its electrons are shared perfectly equally.",
+      "Its oxygen is always a separate positive ion.",
+      "Water contains a long hydrocarbon tail."
+    ],
+    "answers": [
+      0
+    ],
+    "explain": "Oxygen attracts shared electrons more strongly than hydrogen. Along with the bent shape, this gives water a partially negative oxygen end and partially positive hydrogens.",
+    "hint": "Identify what is changing, then connect it to the biological mechanism.",
+    "visual": null,
+    "multi": false
+  },
+  {
+    "id": "q040",
+    "topic": "Water & pH",
+    "prompt": "At ordinary classroom conditions, which pH indicates an acidic solution?",
+    "options": [
+      "3",
+      "7",
+      "9",
+      "12"
+    ],
+    "answers": [
+      0
+    ],
+    "explain": "A pH below 7 is acidic under ordinary classroom conditions. Lower pH means greater hydrogen-ion concentration.",
+    "hint": "Identify what is changing, then connect it to the biological mechanism.",
+    "visual": null,
+    "multi": false
+  },
+  {
+    "id": "q041",
+    "topic": "Water & pH",
+    "prompt": "A solution becomes more acidic. What happens to its hydrogen-ion concentration?",
+    "options": [
+      "It increases.",
+      "It decreases.",
+      "It must become zero.",
+      "It is unrelated to pH."
+    ],
+    "answers": [
+      0
+    ],
+    "explain": "pH is logarithmically related to hydrogen-ion activity, commonly approximated using concentration in introductory biology. Lower pH corresponds to higher [H⁺].",
+    "hint": "Identify what is changing, then connect it to the biological mechanism.",
+    "visual": null,
+    "multi": false
+  },
+  {
+    "id": "q042",
+    "topic": "Water & pH",
+    "prompt": "Which statements distinguish covalent bonds from hydrogen bonds? Select all that apply.",
+    "options": [
+      "A covalent bond involves shared electrons.",
+      "The O–H bonds inside water are covalent.",
+      "Hydrogen bonds join the amino-acid sequence of a protein.",
+      "Every bond involving a hydrogen atom is a hydrogen bond."
+    ],
+    "answers": [
+      0,
+      1
+    ],
+    "explain": "Covalent bonds involve electron sharing. Peptide bonds are covalent; hydrogen bonds are attractions involving a partially positive hydrogen and an appropriate electronegative atom.",
+    "hint": "Identify what is changing, then connect it to the biological mechanism.",
+    "visual": null,
+    "multi": true,
+    "flashPrompt": "Explain what a covalent bond is and identify the type of bond inside a water molecule."
+  },
+  {
+    "id": "q043",
+    "topic": "Experiments",
+    "prompt": "In this experiment, which tube is the negative control for a color change?",
+    "options": [
+      "Tube A: indicator only",
+      "Tube B: indicator and sprouting seeds",
+      "Tube C: indicator and dilute acid",
+      "Tube D: indicator and carbonated water"
+    ],
+    "answers": [
+      0
+    ],
+    "explain": "The indicator-only tube establishes the baseline under the same conditions. Without it, a color change cannot be compared with an untreated setup.",
+    "hint": "Identify what is changing, then connect it to the biological mechanism.",
+    "visual": "btb",
+    "multi": false
+  },
+  {
+    "id": "q044",
+    "topic": "Experiments",
+    "prompt": "Why can sprouting seeds turn bromothymol blue (BTB) from blue toward yellow?",
+    "options": [
+      "Respiration releases CO₂, which can acidify the water.",
+      "The seeds prove that yellow always means oxygen.",
+      "The indicator becomes a protein.",
+      "Respiration consumes all hydrogen ions."
+    ],
+    "answers": [
+      0
+    ],
+    "explain": "Sprouting seeds actively respire. Dissolved CO₂ can form carbonic acid and lower pH, causing BTB to shift toward yellow.",
+    "hint": "Identify what is changing, then connect it to the biological mechanism.",
+    "visual": "btb",
+    "multi": false
+  },
+  {
+    "id": "q045",
+    "topic": "Experiments",
+    "prompt": "BTB turns yellow after an unknown liquid is added. What is the strongest conclusion from that result alone?",
+    "options": [
+      "The mixture is acidic enough to make BTB yellow.",
+      "The liquid definitely contained living cells.",
+      "The liquid definitely produced CO₂.",
+      "All enzymes in the liquid are denatured."
+    ],
+    "answers": [
+      0
+    ],
+    "explain": "BTB is a pH indicator, not a CO₂-specific test. Acid can turn it yellow even without CO₂. Use controls and other evidence to identify the cause.",
+    "hint": "Identify what is changing, then connect it to the biological mechanism.",
+    "visual": "btb",
+    "multi": false
+  },
+  {
+    "id": "q046",
+    "topic": "Experiments",
+    "prompt": "Under the classroom test described here, adding CO₂ to limewater first produces a cloudy precipitate. What can this test support?",
+    "options": [
+      "The presence of CO₂",
+      "The presence of a peptide bond",
+      "The exact amount of glucose",
+      "The identity of an enzyme"
+    ],
+    "answers": [
+      0
+    ],
+    "explain": "CO₂ reacts with calcium hydroxide in limewater to form calcium carbonate precipitate. This is a useful classroom test for CO₂; it is distinct from the pH change detected by BTB.",
+    "hint": "Identify what is changing, then connect it to the biological mechanism.",
+    "visual": null,
+    "multi": false
+  },
+  {
+    "id": "q047",
+    "topic": "Experiments",
+    "prompt": "Dry seeds leave BTB blue after five minutes, while sprouting seeds turn it yellow. Which conclusion is most careful?",
+    "options": [
+      "Sprouting seeds produced enough CO₂ to cause a detectable pH change in that time.",
+      "Dry seeds can never respire.",
+      "All seeds release equal CO₂ at all times.",
+      "Yellow proves that only photosynthesis occurred."
+    ],
+    "answers": [
+      0
+    ],
+    "explain": "The observation supports greater detectable respiration in sprouting seeds under these conditions. No visible change in dry seeds does not prove respiration is absolutely absent.",
+    "hint": "Identify what is changing, then connect it to the biological mechanism.",
+    "visual": "btb",
+    "multi": false
+  },
+  {
+    "id": "q048",
+    "topic": "Experiments",
+    "prompt": "In the pathway shown, enzyme E2 is blocked. Which direct product can no longer be made through that step?",
+    "options": [
+      "Product B",
+      "Intermediate A",
+      "Product C",
+      "The starting substrate"
+    ],
+    "answers": [
+      0
+    ],
+    "explain": "E2 catalyzes A → B. Blocking it interrupts that branch, while E1 and E3 can still operate if their other requirements are met.",
+    "hint": "Trace the arrow labeled E2.",
+    "visual": "pathway",
+    "multi": false
+  },
+  {
+    "id": "q049",
+    "topic": "Experiments",
+    "prompt": "Using the pathway shown, how many enzyme-catalyzed steps connect Start to product D?",
+    "options": [
+      "3",
+      "1",
+      "2",
+      "4"
+    ],
+    "answers": [
+      0
+    ],
+    "explain": "Follow Start → A (E1), A → C (E3), and C → D (E4): three steps.",
+    "hint": "Identify what is changing, then connect it to the biological mechanism.",
+    "visual": "pathway",
+    "multi": false
+  },
+  {
+    "id": "q050",
+    "topic": "Experiments",
+    "prompt": "Only E3 is blocked in the pathway. Which products lose their depicted route from A? Select all that apply.",
+    "options": [
+      "C",
+      "D",
+      "B",
+      "A"
+    ],
+    "answers": [
+      0,
+      1
+    ],
+    "explain": "E3 makes C from A, and D depends on C. The E2 branch to B remains available. A can still be formed by E1.",
+    "hint": "Identify what is changing, then connect it to the biological mechanism.",
+    "visual": "pathway",
+    "multi": true
+  },
+  {
+    "id": "q051",
+    "topic": "Experiments",
+    "prompt": "To test the effect of pH on enzyme activity, what should you change deliberately?",
+    "options": [
+      "The pH of the reaction mixture",
+      "The enzyme amount and pH together",
+      "The substrate amount and temperature together",
+      "Every condition in each trial"
+    ],
+    "answers": [
+      0
+    ],
+    "explain": "The independent variable is pH. Hold temperature, enzyme concentration, substrate concentration, and measurement time constant where possible.",
+    "hint": "Identify what is changing, then connect it to the biological mechanism.",
+    "visual": null,
+    "multi": false
+  },
+  {
+    "id": "q052",
+    "topic": "Experiments",
+    "prompt": "In an experiment measuring product formed at different temperatures, what is the dependent variable?",
+    "options": [
+      "The amount of product formed in a fixed time",
+      "The chosen temperature",
+      "The tube label",
+      "The planned number of trials"
+    ],
+    "answers": [
+      0
+    ],
+    "explain": "The dependent variable is the measured response. Temperature is the independent variable being manipulated.",
+    "hint": "Identify what is changing, then connect it to the biological mechanism.",
+    "visual": null,
+    "multi": false
+  },
+  {
+    "id": "q053",
+    "topic": "Experiments",
+    "prompt": "In a simplified gut model, digestion converts polymers into monomers, and absorption removes monomers from the gut. Where does the table support absorption occurring?",
+    "options": [
+      "Between locations 3 and 5",
+      "Between locations 1 and 2 only",
+      "Before location 1 only",
+      "Nowhere, because monomers cannot be absorbed"
+    ],
+    "answers": [
+      0
+    ],
+    "explain": "Monomers fall from 8 to 4 to 1 units between locations 3 and 5, after polymers have reached zero. Under the stated model, that decline supports absorption.",
+    "hint": "Identify what is changing, then connect it to the biological mechanism.",
+    "visual": "gut",
+    "multi": false
+  },
+  {
+    "id": "q054",
+    "topic": "Water & pH",
+    "prompt": "A solution changes from pH 8 to pH 6. Its hydrogen-ion concentration becomes…",
+    "options": [
+      "100 times as high",
+      "1/100 as high",
+      "2 times as high",
+      "Unchanged"
+    ],
+    "answers": [
+      0
+    ],
+    "explain": "pH falls by 2. Each drop of one pH unit corresponds to a tenfold increase in [H⁺], so the factor is 10^2 = 100.",
+    "hint": "Each pH unit represents a factor of ten, not an additive change.",
+    "visual": null,
+    "multi": false
+  },
+  {
+    "id": "q055",
+    "topic": "Water & pH",
+    "prompt": "A solution changes from pH 7 to pH 4. Its hydrogen-ion concentration becomes…",
+    "options": [
+      "1,000 times as high",
+      "1/1,000 as high",
+      "3 times as high",
+      "Unchanged"
+    ],
+    "answers": [
+      0
+    ],
+    "explain": "pH falls by 3. Each drop of one pH unit corresponds to a tenfold increase in [H⁺], so the factor is 10^3 = 1,000.",
+    "hint": "Each pH unit represents a factor of ten, not an additive change.",
+    "visual": null,
+    "multi": false
+  },
+  {
+    "id": "q056",
+    "topic": "Water & pH",
+    "prompt": "A solution changes from pH 5 to pH 3. Its hydrogen-ion concentration becomes…",
+    "options": [
+      "100 times as high",
+      "1/100 as high",
+      "2 times as high",
+      "Unchanged"
+    ],
+    "answers": [
+      0
+    ],
+    "explain": "pH falls by 2. Each drop of one pH unit corresponds to a tenfold increase in [H⁺], so the factor is 10^2 = 100.",
+    "hint": "Each pH unit represents a factor of ten, not an additive change.",
+    "visual": null,
+    "multi": false
+  },
+  {
+    "id": "q057",
+    "topic": "Water & pH",
+    "prompt": "A solution changes from pH 9 to pH 8. Its hydrogen-ion concentration becomes…",
+    "options": [
+      "10 times as high",
+      "1/10 as high",
+      "1 times as high",
+      "Unchanged"
+    ],
+    "answers": [
+      0
+    ],
+    "explain": "pH falls by 1. Each drop of one pH unit corresponds to a tenfold increase in [H⁺], so the factor is 10^1 = 10.",
+    "hint": "Each pH unit represents a factor of ten, not an additive change.",
+    "visual": null,
+    "multi": false
+  },
+  {
+    "id": "q058",
+    "topic": "Water & pH",
+    "prompt": "A solution changes from pH 6 to pH 4. Its hydrogen-ion concentration becomes…",
+    "options": [
+      "100 times as high",
+      "1/100 as high",
+      "2 times as high",
+      "Unchanged"
+    ],
+    "answers": [
+      0
+    ],
+    "explain": "pH falls by 2. Each drop of one pH unit corresponds to a tenfold increase in [H⁺], so the factor is 10^2 = 100.",
+    "hint": "Each pH unit represents a factor of ten, not an additive change.",
+    "visual": null,
+    "multi": false
+  },
+  {
+    "id": "q059",
+    "topic": "Water & pH",
+    "prompt": "A solution changes from pH 10 to pH 7. Its hydrogen-ion concentration becomes…",
+    "options": [
+      "1,000 times as high",
+      "1/1,000 as high",
+      "3 times as high",
+      "Unchanged"
+    ],
+    "answers": [
+      0
+    ],
+    "explain": "pH falls by 3. Each drop of one pH unit corresponds to a tenfold increase in [H⁺], so the factor is 10^3 = 1,000.",
+    "hint": "Each pH unit represents a factor of ten, not an additive change.",
+    "visual": null,
+    "multi": false
+  },
+  {
+    "id": "q060",
+    "topic": "Water & pH",
+    "prompt": "A solution changes from pH 4 to pH 2. Its hydrogen-ion concentration becomes…",
+    "options": [
+      "100 times as high",
+      "1/100 as high",
+      "2 times as high",
+      "Unchanged"
+    ],
+    "answers": [
+      0
+    ],
+    "explain": "pH falls by 2. Each drop of one pH unit corresponds to a tenfold increase in [H⁺], so the factor is 10^2 = 100.",
+    "hint": "Each pH unit represents a factor of ten, not an additive change.",
+    "visual": null,
+    "multi": false
+  },
+  {
+    "id": "q061",
+    "topic": "Water & pH",
+    "prompt": "A solution changes from pH 8 to pH 5. Its hydrogen-ion concentration becomes…",
+    "options": [
+      "1,000 times as high",
+      "1/1,000 as high",
+      "3 times as high",
+      "Unchanged"
+    ],
+    "answers": [
+      0
+    ],
+    "explain": "pH falls by 3. Each drop of one pH unit corresponds to a tenfold increase in [H⁺], so the factor is 10^3 = 1,000.",
+    "hint": "Each pH unit represents a factor of ten, not an additive change.",
+    "visual": null,
+    "multi": false
+  },
+  {
+    "id": "q062",
+    "topic": "Water & pH",
+    "prompt": "A solution changes from pH 3 to pH 5. Its hydrogen-ion concentration becomes…",
+    "options": [
+      "1/100 as high",
+      "100 times as high",
+      "2 times as high",
+      "Unchanged"
+    ],
+    "answers": [
+      0
+    ],
+    "explain": "pH rises by 2, so [H⁺] falls by a factor of 10^2 = 100.",
+    "hint": "A higher pH means fewer hydrogen ions.",
+    "visual": null,
+    "multi": false
+  },
+  {
+    "id": "q063",
+    "topic": "Water & pH",
+    "prompt": "A solution changes from pH 5 to pH 8. Its hydrogen-ion concentration becomes…",
+    "options": [
+      "1/1,000 as high",
+      "1,000 times as high",
+      "3 times as high",
+      "Unchanged"
+    ],
+    "answers": [
+      0
+    ],
+    "explain": "pH rises by 3, so [H⁺] falls by a factor of 10^3 = 1,000.",
+    "hint": "A higher pH means fewer hydrogen ions.",
+    "visual": null,
+    "multi": false
+  },
+  {
+    "id": "q064",
+    "topic": "Water & pH",
+    "prompt": "A solution changes from pH 6 to pH 7. Its hydrogen-ion concentration becomes…",
+    "options": [
+      "1/10 as high",
+      "10 times as high",
+      "1 times as high",
+      "Unchanged"
+    ],
+    "answers": [
+      0
+    ],
+    "explain": "pH rises by 1, so [H⁺] falls by a factor of 10^1 = 10.",
+    "hint": "A higher pH means fewer hydrogen ions.",
+    "visual": null,
+    "multi": false
+  },
+  {
+    "id": "q065",
+    "topic": "Water & pH",
+    "prompt": "A solution changes from pH 4 to pH 6. Its hydrogen-ion concentration becomes…",
+    "options": [
+      "1/100 as high",
+      "100 times as high",
+      "2 times as high",
+      "Unchanged"
+    ],
+    "answers": [
+      0
+    ],
+    "explain": "pH rises by 2, so [H⁺] falls by a factor of 10^2 = 100.",
+    "hint": "A higher pH means fewer hydrogen ions.",
+    "visual": null,
+    "multi": false
+  },
+  {
+    "id": "q066",
+    "topic": "Water & pH",
+    "prompt": "At a fixed temperature, pH falls from 8 to 6. What happens to hydroxide-ion concentration, [OH⁻]?",
+    "options": [
+      "It becomes 1/100 as high.",
+      "It becomes 100 times as high.",
+      "It becomes twice as high.",
+      "It stays unchanged."
+    ],
+    "answers": [
+      0
+    ],
+    "explain": "[H⁺] increases 100-fold. At a fixed temperature, [H⁺][OH⁻] is constant, so [OH⁻] decreases 100-fold.",
+    "hint": "Hydrogen and hydroxide concentrations move in opposite directions at a fixed temperature.",
+    "visual": null,
+    "multi": false
+  },
+  {
+    "id": "q067",
+    "topic": "Experiments",
+    "prompt": "What is the average rate of product formation from 0 to 20 seconds?",
+    "options": [
+      "0.025 mg/s",
+      "0.50 mg/s",
+      "0.050 mg/s",
+      "20 mg/s"
+    ],
+    "answers": [
+      0
+    ],
+    "explain": "Average rate = change in product / elapsed time = (0.50 − 0.00) mg / 20 s = 0.025 mg/s.",
+    "hint": "Use the slope: change in amount divided by change in time.",
+    "visual": "rates",
+    "multi": false
+  },
+  {
+    "id": "q068",
+    "topic": "Experiments",
+    "prompt": "What is the average rate of product formation from 40 to 50 seconds?",
+    "options": [
+      "0.005 mg/s",
+      "0.050 mg/s",
+      "0.085 mg/s",
+      "0.80 mg/s"
+    ],
+    "answers": [
+      0
+    ],
+    "explain": "(0.85 − 0.80) mg / (50 − 40) s = 0.05 mg / 10 s = 0.005 mg/s.",
+    "hint": "Identify what is changing, then connect it to the biological mechanism.",
+    "visual": "rates",
+    "multi": false
+  },
+  {
+    "id": "q069",
+    "topic": "Experiments",
+    "prompt": "Which interval has no net product formation in the data?",
+    "options": [
+      "50–60 seconds",
+      "0–10 seconds",
+      "20–30 seconds",
+      "40–50 seconds"
+    ],
+    "answers": [
+      0
+    ],
+    "explain": "Product remains at 0.85 mg between 50 and 60 seconds, so its net increase is zero.",
+    "hint": "Identify what is changing, then connect it to the biological mechanism.",
+    "visual": "rates",
+    "multi": false
+  },
+  {
+    "id": "q070",
+    "topic": "Experiments",
+    "prompt": "Product levels off, but the table alone does not prove why. Which follow-up best tests substrate depletion?",
+    "options": [
+      "Add more substrate while keeping other conditions the same.",
+      "Rename the enzyme.",
+      "Change temperature, pH, and enzyme amount all at once.",
+      "Discard the control tube."
+    ],
+    "answers": [
+      0
+    ],
+    "explain": "If adding substrate restarts product formation, that supports substrate depletion. The plateau alone does not prove the enzyme was consumed or identify a unique cause.",
+    "hint": "Identify what is changing, then connect it to the biological mechanism.",
+    "visual": "rates",
+    "multi": false
+  },
+  {
+    "id": "h001",
+    "difficulty": "challenge",
+    "topic": "Enzymes",
+    "prompt": "Two identical enzyme reactions reach a plateau. Adding fresh substrate to tube A restarts product formation; adding only fresh enzyme to tube B does not. Which explanation is best supported?",
+    "options": [
+      "The original substrate became limiting, while functional enzyme remained.",
+      "The original enzyme was completely denatured.",
+      "The product permanently stopped all catalysis.",
+      "The plateau proves the enzyme was consumed."
+    ],
+    "answers": [
+      0
+    ],
+    "explain": "The different responses favor substrate depletion over loss of enzyme activity.",
+    "reasoning": [
+      "Substrate alone restarts tube A, so working enzyme was still present.",
+      "Enzyme alone does not restart tube B, so adding catalytic capacity does not solve the limitation.",
+      "Together these observations support insufficient available substrate. They do not establish that every substrate molecule was gone."
+    ],
+    "optionFeedback": [
+      "The different responses favor substrate depletion over loss of enzyme activity.",
+      "If all original enzyme had been destroyed, substrate alone would not restart tube A.",
+      "Tube A resumes catalysis even though the original product remains.",
+      "The restart with substrate alone shows usable enzyme remains."
+    ],
+    "hint": "Ask which added material rescued the reaction.",
+    "visual": null,
+    "multi": false
+  },
+  {
+    "id": "h002",
+    "difficulty": "challenge",
+    "topic": "Enzymes",
+    "prompt": "Two enzyme samples are tested with saturating substrate. A gives 12 units/min and B gives 6 units/min. Without any other measurements, what can you conclude?",
+    "options": [
+      "B has lower measured catalytic capacity, but the cause is not uniquely identified.",
+      "B must contain exactly half as many enzyme molecules.",
+      "B must have a different amino-acid sequence.",
+      "B must contain half as much substrate."
+    ],
+    "answers": [
+      0
+    ],
+    "explain": "The rate difference is real, but one rate measurement does not distinguish enzyme quantity from enzyme function.",
+    "reasoning": [
+      "At saturating substrate, simply adding more substrate is unlikely to explain the difference.",
+      "Rate depends on how much functional enzyme is present and how quickly it catalyzes the reaction.",
+      "Measuring enzyme concentration or controlling treatment conditions would help separate those explanations."
+    ],
+    "optionFeedback": [
+      "The rate difference is real, but one rate measurement does not distinguish enzyme quantity from enzyme function.",
+      "Lower activity could also reflect fewer active molecules or altered catalytic performance.",
+      "The same sequence could show different activity after treatment or at a different concentration.",
+      "Both samples are explicitly tested with saturating substrate."
+    ],
+    "hint": "Separate the observation from an explanation that requires extra evidence.",
+    "visual": null,
+    "multi": false
+  },
+  {
+    "id": "h003",
+    "difficulty": "challenge",
+    "topic": "Enzymes",
+    "prompt": "An inhibitor reduces the initial rate at low substrate concentration, but its effect nearly disappears at very high substrate concentration. Which mechanism best fits these observations?",
+    "options": [
+      "The inhibitor competes with substrate for the active site.",
+      "The inhibitor permanently destroys every enzyme molecule.",
+      "The inhibitor removes all substrate at every concentration.",
+      "The inhibitor lowers activation energy more than the enzyme does."
+    ],
+    "answers": [
+      0
+    ],
+    "explain": "Competition is a good fit because abundant substrate can outcompete a reversible active-site inhibitor.",
+    "reasoning": [
+      "At low substrate concentration, inhibitor binding can prevent substrate binding.",
+      "At high substrate concentration, substrate is more likely to occupy the active site.",
+      "The data support this model; they do not directly show the inhibitor’s binding location."
+    ],
+    "optionFeedback": [
+      "Competition is a good fit because abundant substrate can outcompete a reversible active-site inhibitor.",
+      "More substrate would not restore permanently destroyed active sites.",
+      "That does not fit the recovery at high substrate concentration.",
+      "That would tend to increase rate rather than explain the observed inhibition."
+    ],
+    "hint": "Why might increasing substrate help with competition but not with destroyed enzyme?",
+    "visual": null,
+    "multi": false
+  },
+  {
+    "id": "h004",
+    "difficulty": "challenge",
+    "topic": "Enzymes",
+    "prompt": "After each treatment, identical enzyme samples are tested at 25°C with equal substrate and pH. Which interpretation best fits the results?",
+    "options": [
+      "Cooling caused little lasting loss, while heating caused substantial lasting loss of activity.",
+      "The ice treatment permanently destroyed most active sites.",
+      "The heated sample’s low rate proves its peptide bonds were broken.",
+      "The heated sample must recover completely if cooled longer."
+    ],
+    "answers": [
+      0
+    ],
+    "explain": "Testing all samples at the same final temperature separates lasting treatment effects from immediate temperature effects.",
+    "reasoning": [
+      "The ice-treated sample gives 9.8 versus 10.0 units/min for the control.",
+      "The heated sample gives only 0.5 units/min despite being tested at the same 25°C.",
+      "This supports lasting heat-related damage, such as denaturation, without proving the molecular mechanism."
+    ],
+    "optionFeedback": [
+      "Testing all samples at the same final temperature separates lasting treatment effects from immediate temperature effects.",
+      "Its activity returned to nearly the untreated level after warming.",
+      "Reduced function does not by itself show cleavage of peptide bonds.",
+      "The measurements do not establish whether the change is reversible."
+    ],
+    "hint": "Focus on the temperature during the final measurement, not just the treatment.",
+    "visual": {
+      "headers": [
+        "Pretreatment",
+        "Rate at 25°C (units/min)"
+      ],
+      "rows": [
+        [
+          "None",
+          "10.0"
+        ],
+        [
+          "Ice for 10 min",
+          "9.8"
+        ],
+        [
+          "80°C for 10 min",
+          "0.5"
+        ]
+      ]
+    },
+    "multi": false
+  },
+  {
+    "id": "h005",
+    "difficulty": "challenge",
+    "topic": "Enzymes",
+    "prompt": "At low substrate concentration, doubling enzyme approximately doubles initial rate. At very high substrate concentration, doubling substrate barely changes rate. Which single explanation fits both?",
+    "options": [
+      "Rate depends on available active sites, and those sites can become saturated.",
+      "Enzymes are used up faster at high substrate levels.",
+      "Substrate concentration never affects enzyme rate.",
+      "Every substrate molecule binds permanently to an enzyme."
+    ],
+    "answers": [
+      0
+    ],
+    "explain": "Active-site availability explains why more enzyme helps while extra substrate eventually stops helping.",
+    "reasoning": [
+      "More enzyme adds catalytic sites.",
+      "Each enzyme can process only a limited number of substrate molecules per unit time.",
+      "When sites are already occupied nearly continuously, extra substrate alone has little effect."
+    ],
+    "optionFeedback": [
+      "Active-site availability explains why more enzyme helps while extra substrate eventually stops helping.",
+      "Catalysts are regenerated; saturation does not mean they are consumed.",
+      "The claim confuses the saturated condition with all possible conditions.",
+      "Permanent binding would prevent normal repeated catalysis."
+    ],
+    "hint": "Think about the number of working sites and how busy each site is.",
+    "visual": null,
+    "multi": false
+  },
+  {
+    "id": "h006",
+    "difficulty": "challenge",
+    "topic": "Molecules",
+    "prompt": "A membrane forms in water with its polar heads exposed and hydrocarbon tails clustered inside. If the tails were made much more polar, what is the most reasonable prediction?",
+    "options": [
+      "The driving force for hiding the tails from water would weaken.",
+      "The tails would avoid water even more strongly.",
+      "The membrane would automatically become a protein.",
+      "The heads would lose their phosphate atoms immediately."
+    ],
+    "answers": [
+      0
+    ],
+    "explain": "The usual bilayer organization depends partly on the tails being poorly compatible with water.",
+    "reasoning": [
+      "Polar regions interact favorably with water.",
+      "Nonpolar tails tend to cluster away from water.",
+      "Making the tails more polar weakens that contrast, potentially changing membrane assembly."
+    ],
+    "optionFeedback": [
+      "The usual bilayer organization depends partly on the tails being poorly compatible with water.",
+      "Increasing polarity generally improves interaction with water rather than strengthening hydrophobic avoidance.",
+      "Changing polarity does not convert a lipid into an amino-acid polymer.",
+      "Tail polarity alone does not imply removal of phosphate groups."
+    ],
+    "hint": "Connect chemical polarity to behavior in water.",
+    "visual": null,
+    "multi": false
+  },
+  {
+    "id": "h007",
+    "difficulty": "challenge",
+    "topic": "Molecules",
+    "prompt": "An unknown sample contains nitrogen and hydrolyzes into amino acids. A second contains phosphorus and hydrolyzes into nucleotides. Which pairing is best supported?",
+    "options": [
+      "First: protein; second: nucleic acid.",
+      "First: carbohydrate; second: protein.",
+      "First: nucleic acid; second: triglyceride.",
+      "Both must be phospholipids because they contain extra elements."
+    ],
+    "answers": [
+      0
+    ],
+    "explain": "The building blocks produced by hydrolysis are stronger evidence than the presence of a single element.",
+    "reasoning": [
+      "Amino acids are the units of proteins.",
+      "Nucleotides are the units of nucleic acids.",
+      "Nitrogen or phosphorus alone would not uniquely identify a molecule class."
+    ],
+    "optionFeedback": [
+      "The building blocks produced by hydrolysis are stronger evidence than the presence of a single element.",
+      "Carbohydrates do not hydrolyze into amino acids, and proteins do not hydrolyze into nucleotides.",
+      "Nucleic acids yield nucleotides, while triglycerides yield glycerol and fatty acids.",
+      "Elemental composition alone is not decisive; the hydrolysis products identify different building blocks."
+    ],
+    "hint": "Prioritize the breakdown products over a single element.",
+    "visual": null,
+    "multi": false
+  },
+  {
+    "id": "h008",
+    "difficulty": "challenge",
+    "topic": "Molecules",
+    "prompt": "Two molecules both contain only carbon, hydrogen, and oxygen. X has many hydroxyl groups; Y is dominated by a long hydrocarbon chain. Which comparison is most reasonable?",
+    "options": [
+      "X is likely to interact with water more readily than Y.",
+      "X and Y must have identical solubility because their elements match.",
+      "Y must be more polar because its chain is longer.",
+      "X must be a protein because it contains oxygen."
+    ],
+    "answers": [
+      0
+    ],
+    "explain": "Functional groups and their arrangement help determine polarity and water interactions.",
+    "reasoning": [
+      "Hydroxyl groups can participate in hydrogen bonding with water.",
+      "Hydrocarbon regions are mostly nonpolar.",
+      "Therefore X is more likely to interact readily with water, without needing an exact molecular identity."
+    ],
+    "optionFeedback": [
+      "Functional groups and their arrangement help determine polarity and water interactions.",
+      "Arrangement and functional groups affect properties even when the same elements are present.",
+      "A long hydrocarbon region is largely nonpolar.",
+      "Oxygen is found in many molecule classes and does not identify a protein."
+    ],
+    "hint": "Compare functional groups, not just element names.",
+    "visual": null,
+    "multi": false
+  },
+  {
+    "id": "h009",
+    "difficulty": "challenge",
+    "topic": "Molecules",
+    "prompt": "A sample contains only triglycerides and diglycerides. Each molecule contains one glycerol; triglycerides have three fatty acids and diglycerides have two. Complete hydrolysis yields 4 glycerols and 10 fatty acids. What was the sample’s composition?",
+    "options": [
+      "2 triglycerides and 2 diglycerides.",
+      "4 triglycerides and 0 diglycerides.",
+      "1 triglyceride and 3 diglycerides.",
+      "3 triglycerides and 1 diglyceride."
+    ],
+    "answers": [
+      0
+    ],
+    "explain": "The product counts require four lipid molecules, with two carrying three fatty acids and two carrying two.",
+    "reasoning": [
+      "Four glycerols mean four original lipid molecules.",
+      "Four diglycerides would give eight fatty acids. The observed total is two higher.",
+      "Replacing two of those diglycerides with triglycerides adds two fatty acids: 2 × 3 + 2 × 2 = 10."
+    ],
+    "optionFeedback": [
+      "Two triglycerides and two diglycerides give 4 glycerols and 10 fatty acids.",
+      "Four triglycerides would give 12 fatty acids, not 10.",
+      "One triglyceride and three diglycerides would give 9 fatty acids.",
+      "Three triglycerides and one diglyceride would give 11 fatty acids."
+    ],
+    "hint": "Use glycerol to find the total molecule count, then use fatty acids to split that total between the two types.",
+    "visual": null,
+    "multi": false
+  },
+  {
+    "id": "h010",
+    "difficulty": "challenge",
+    "topic": "Molecules",
+    "prompt": "Glucose and a fatty acid can both contain six carbon atoms, but they behave differently in water. What information would best explain the difference?",
+    "options": [
+      "The kinds and arrangement of functional groups.",
+      "Only the total number of carbon atoms.",
+      "Only whether the sample came from an animal.",
+      "Only whether the molecule contains any oxygen."
+    ],
+    "answers": [
+      0
+    ],
+    "explain": "A molecule’s properties depend on its structure, not merely its atom count or origin.",
+    "reasoning": [
+      "Glucose has several hydroxyl groups that interact with water.",
+      "A fatty acid has a carboxyl group and a nonpolar hydrocarbon region.",
+      "The balance and arrangement of these regions help explain different water interactions."
+    ],
+    "optionFeedback": [
+      "A molecule’s properties depend on its structure, not merely its atom count or origin.",
+      "Equal carbon counts do not guarantee equal polarity.",
+      "Origin does not determine the molecule’s water interactions.",
+      "Both can contain oxygen, yet its amount and arrangement differ."
+    ],
+    "hint": "Ask what a formula or carbon count leaves out.",
+    "visual": null,
+    "multi": false
+  },
+  {
+    "id": "h011",
+    "difficulty": "challenge",
+    "topic": "Proteins",
+    "prompt": "A mutation replaces a nonpolar side chain buried inside an enzyme with a charged side chain. The protein still has the same number of amino acids, but its activity falls. What is the best explanation?",
+    "options": [
+      "Changed side-chain interactions may have altered folding or the active site.",
+      "The unchanged length proves the primary structure is unchanged.",
+      "The substitution must have hydrolyzed all peptide bonds.",
+      "Only quaternary structure can affect enzyme activity."
+    ],
+    "answers": [
+      0
+    ],
+    "explain": "Equal chain length does not mean equal sequence, folding, or function.",
+    "reasoning": [
+      "Replacing a residue changes primary structure even if length stays constant.",
+      "A charged side chain can interact differently from a nonpolar one.",
+      "Those changes may alter tertiary structure and the enzyme’s ability to bind or process substrate."
+    ],
+    "optionFeedback": [
+      "Equal chain length does not mean equal sequence, folding, or function.",
+      "Primary structure is the identity and order of residues, not just chain length.",
+      "Replacing one residue does not imply destruction of every peptide link.",
+      "The fold and active site of a single polypeptide can strongly affect activity."
+    ],
+    "hint": "Distinguish chain length from sequence and sequence from fold.",
+    "visual": null,
+    "multi": false
+  },
+  {
+    "id": "h012",
+    "difficulty": "challenge",
+    "topic": "Proteins",
+    "prompt": "A protein has four subunits. Treatment separates the subunits, but each subunit retains its original amino-acid sequence and three-dimensional fold. Which level is directly disrupted?",
+    "options": [
+      "Quaternary structure.",
+      "Primary structure.",
+      "Secondary structure.",
+      "Tertiary structure."
+    ],
+    "answers": [
+      0
+    ],
+    "explain": "The change affects how separate polypeptide subunits associate, not the structure within each subunit.",
+    "reasoning": [
+      "Primary refers to sequence.",
+      "Tertiary refers to the fold of one chain.",
+      "Quaternary refers to the arrangement of multiple chains, which the treatment disrupts."
+    ],
+    "optionFeedback": [
+      "The change affects how separate polypeptide subunits associate, not the structure within each subunit.",
+      "The sequence and peptide links remain intact.",
+      "The prompt says each subunit keeps its fold, which includes its local structural elements.",
+      "Each individual polypeptide retains its three-dimensional fold."
+    ],
+    "hint": "Locate the change: within one chain or between different chains?",
+    "visual": null,
+    "multi": false
+  },
+  {
+    "id": "h013",
+    "difficulty": "challenge",
+    "topic": "Proteins",
+    "prompt": "A treatment unfolds a polypeptide without cleaving peptide bonds. It then refolds and regains activity. Which claim is supported?",
+    "options": [
+      "Loss of function was reversible without changing the amino-acid sequence.",
+      "The primary structure was destroyed and rebuilt.",
+      "All denatured proteins always refold successfully.",
+      "Hydrolysis was required to restore the protein."
+    ],
+    "answers": [
+      0
+    ],
+    "explain": "This example demonstrates reversible unfolding under the conditions tested, not universal reversibility.",
+    "reasoning": [
+      "Unfolding changes shape while the chain can remain intact.",
+      "Restored folding accompanies restored activity.",
+      "The conclusion is limited to this protein and treatment."
+    ],
+    "optionFeedback": [
+      "This example demonstrates reversible unfolding under the conditions tested, not universal reversibility.",
+      "The prompt states that peptide bonds were not cleaved.",
+      "One successful example does not establish a universal rule.",
+      "No peptide cleavage is described, and refolding does not require splitting the chain."
+    ],
+    "hint": "Avoid turning one successful recovery into a claim about every protein.",
+    "visual": null,
+    "multi": false
+  },
+  {
+    "id": "h014",
+    "difficulty": "challenge",
+    "topic": "Proteins",
+    "prompt": "Two polypeptides have the same amino-acid composition but different amino-acid orders. Must they have the same function?",
+    "options": [
+      "No; different sequences can create different folding and binding properties.",
+      "Yes; matching amino-acid counts guarantee the same fold.",
+      "Yes; only the number of peptide bonds affects function.",
+      "No; one of them must no longer be a protein."
+    ],
+    "answers": [
+      0
+    ],
+    "explain": "Composition describes which residues are present; sequence describes their order.",
+    "reasoning": [
+      "The same set of building blocks can be arranged in different orders.",
+      "Order influences side-chain interactions and folding.",
+      "Therefore matching composition alone cannot establish matching function."
+    ],
+    "optionFeedback": [
+      "Composition describes which residues are present; sequence describes their order.",
+      "Order controls where particular side chains occur and which interactions are possible.",
+      "Sequence and three-dimensional organization also matter.",
+      "Both are polypeptides; different sequence does not change that classification."
+    ],
+    "hint": "Imagine the same letters arranged into different words.",
+    "visual": null,
+    "multi": false
+  },
+  {
+    "id": "h015",
+    "difficulty": "challenge",
+    "topic": "Proteins",
+    "prompt": "An enzyme loses activity at low pH, then regains it when the original pH is restored. Which inference is most justified?",
+    "options": [
+      "A reversible change in charge or structure affected the enzyme’s activity.",
+      "Acid definitely cut every peptide bond.",
+      "The experiment proves that the amino-acid sequence changed.",
+      "Every low-pH treatment is harmless to every enzyme."
+    ],
+    "answers": [
+      0
+    ],
+    "explain": "Reversible changes in protonation and interactions can change activity without changing sequence.",
+    "reasoning": [
+      "pH affects the charges of some groups in a protein.",
+      "Charge changes can alter substrate interactions or folding.",
+      "Recovery after restoring pH supports reversibility in this case, but does not reveal every molecular detail."
+    ],
+    "optionFeedback": [
+      "Reversible changes in protonation and interactions can change activity without changing sequence.",
+      "Full activity returning after restoring pH does not support complete chain destruction.",
+      "Activity can change without any sequence change.",
+      "The outcome for one enzyme does not establish a universal rule."
+    ],
+    "hint": "What kinds of changes can reverse when the surroundings return to normal?",
+    "visual": null,
+    "multi": false
+  },
+  {
+    "id": "h016",
+    "difficulty": "challenge",
+    "topic": "Building & breaking",
+    "prompt": "Fifteen free amino acids are assembled into three separate linear chains of lengths 4, 5, and 6. In the simplified condensation model, how many water molecules are released in total?",
+    "options": [
+      "12.",
+      "14.",
+      "15.",
+      "3."
+    ],
+    "answers": [
+      0
+    ],
+    "explain": "Each separate linear chain contributes one fewer peptide bond than its number of residues.",
+    "reasoning": [
+      "The 4-residue chain forms 3 links.",
+      "The 5- and 6-residue chains form 4 and 5 links.",
+      "Total links = 3 + 4 + 5 = 12, so 12 waters are released."
+    ],
+    "optionFeedback": [
+      "Each separate linear chain contributes one fewer peptide bond than its number of residues.",
+      "Fourteen links would connect all 15 residues into one chain, not three.",
+      "A chain does not have one peptide link per residue; each chain has one fewer link than residues.",
+      "Three is the number of chains, not the number of links formed."
+    ],
+    "hint": "Count the links within each chain before adding.",
+    "visual": null,
+    "multi": false
+  },
+  {
+    "id": "h017",
+    "difficulty": "challenge",
+    "topic": "Building & breaking",
+    "prompt": "A single linear polypeptide containing 12 amino acids is cut at exactly three different peptide bonds. No other reactions occur. How many fragments remain, and how many peptide bonds remain unbroken?",
+    "options": [
+      "4 fragments and 8 peptide bonds.",
+      "3 fragments and 9 peptide bonds.",
+      "4 fragments and 9 peptide bonds.",
+      "12 fragments and 0 peptide bonds."
+    ],
+    "answers": [
+      0
+    ],
+    "explain": "Track fragment count and bond count separately.",
+    "reasoning": [
+      "A 12-residue linear chain has 11 peptide bonds.",
+      "Breaking 3 different links creates 1 + 3 = 4 fragments.",
+      "The remaining links total 11 − 3 = 8."
+    ],
+    "optionFeedback": [
+      "Track fragment count and bond count separately.",
+      "Each cut increases the fragment count by one; the initial chain already counts as one fragment.",
+      "A 12-residue linear chain starts with 11 links, so breaking 3 leaves 8.",
+      "That requires complete hydrolysis of all 11 links, not just three cuts."
+    ],
+    "hint": "One cut makes two fragments; start from one original chain.",
+    "visual": null,
+    "multi": false
+  },
+  {
+    "id": "h018",
+    "difficulty": "challenge",
+    "topic": "Building & breaking",
+    "prompt": "In the simplified condensation model, three glucose molecules (each C₆H₁₂O₆) form one linear trisaccharide. What is the product formula?",
+    "options": [
+      "C₁₈H₃₂O₁₆.",
+      "C₁₈H₃₆O₁₈.",
+      "C₁₈H₃₄O₁₇.",
+      "C₁₈H₃₀O₁₅."
+    ],
+    "answers": [
+      0
+    ],
+    "explain": "Add the monomer formulas, then subtract one water for each new link.",
+    "reasoning": [
+      "Three glucose molecules total C₁₈H₃₆O₁₈.",
+      "Three units in a linear chain require two links.",
+      "Subtract 2 H₂O: hydrogen becomes 36 − 4 = 32 and oxygen becomes 18 − 2 = 16."
+    ],
+    "optionFeedback": [
+      "Add the monomer formulas, then subtract one water for each new link.",
+      "That adds the monomers but forgets the two waters released.",
+      "That subtracts only one water, although three units require two links.",
+      "That subtracts three waters, one too many for a linear three-unit chain."
+    ],
+    "hint": "Find the number of links first; then balance the atoms.",
+    "visual": null,
+    "multi": false
+  },
+  {
+    "id": "h019",
+    "difficulty": "challenge",
+    "topic": "Building & breaking",
+    "prompt": "Two existing linear polypeptides contain 7 and 9 residues. They are joined end-to-end with one new peptide bond. How many peptide bonds are now present, and how many new waters are released in the simplified model?",
+    "options": [
+      "15 peptide bonds total; 1 new water.",
+      "16 peptide bonds total; 1 new water.",
+      "15 peptide bonds total; 15 new waters.",
+      "14 peptide bonds total; 0 new waters."
+    ],
+    "answers": [
+      0
+    ],
+    "explain": "Distinguish the total number of bonds in the final chain from the number newly formed.",
+    "reasoning": [
+      "The starting chains have 6 and 8 links, for 14 total.",
+      "Joining them forms one additional link, making 15.",
+      "Only that new link releases water in the simplified model, so one new water is produced."
+    ],
+    "optionFeedback": [
+      "Distinguish the total number of bonds in the final chain from the number newly formed.",
+      "A linear 16-residue chain contains 15 links.",
+      "Most links already existed; only one new link forms in this step.",
+      "Joining the chains adds one link to the 14 existing links."
+    ],
+    "hint": "Do not count pre-existing links as newly made links.",
+    "visual": null,
+    "multi": false
+  },
+  {
+    "id": "h020",
+    "difficulty": "challenge",
+    "topic": "Building & breaking",
+    "prompt": "Complete hydrolysis of a mixture of separate linear polypeptide chains consumes 20 water molecules and yields 24 free amino acids. How many chains were originally present?",
+    "options": [
+      "4 chains.",
+      "20 chains.",
+      "23 chains.",
+      "1 chain."
+    ],
+    "answers": [
+      0
+    ],
+    "explain": "For separate linear chains, total peptide links equal total residues minus the number of chains.",
+    "reasoning": [
+      "One water is used per peptide bond hydrolyzed, so there were 20 links.",
+      "There were 24 residues in total.",
+      "If k is the number of chains, 20 = 24 − k, giving k = 4."
+    ],
+    "optionFeedback": [
+      "For separate linear chains, total peptide links equal total residues minus the number of chains.",
+      "Twenty is the number of hydrolyzed peptide links, not the number of chains.",
+      "Twenty-three links would occur in one 24-residue chain; that is not what was measured.",
+      "One chain of 24 residues would require 23 waters for complete hydrolysis."
+    ],
+    "hint": "Generalize the n − 1 rule to several separate chains.",
+    "visual": null,
+    "multi": false
+  },
+  {
+    "id": "h021",
+    "difficulty": "challenge",
+    "topic": "Water & pH",
+    "prompt": "Solution A is pH 4, B is pH 6, and C is pH 8. Which statement is correct?",
+    "options": [
+      "A has 10,000 times the H⁺ concentration of C.",
+      "A has twice the H⁺ concentration of C.",
+      "B has more H⁺ than A because 6 is greater than 4.",
+      "A has 100 times the H⁺ concentration of C."
+    ],
+    "answers": [
+      0
+    ],
+    "explain": "Each one-unit decrease in pH multiplies hydrogen-ion concentration by ten.",
+    "reasoning": [
+      "C to B is a two-unit drop: 100-fold more H⁺.",
+      "B to A is another two-unit drop: another 100-fold.",
+      "Multiply: 100 × 100 = 10,000."
+    ],
+    "optionFeedback": [
+      "Each one-unit decrease in pH multiplies hydrogen-ion concentration by ten.",
+      "A four-unit pH gap is logarithmic, not a ratio of the pH numbers.",
+      "Higher pH corresponds to lower H⁺ concentration.",
+      "A factor of 100 applies to a two-unit gap, but A and C differ by four."
+    ],
+    "hint": "Count the full number of pH steps, then multiply powers of ten.",
+    "visual": null,
+    "multi": false
+  },
+  {
+    "id": "h022",
+    "difficulty": "challenge",
+    "topic": "Water & pH",
+    "prompt": "At a fixed temperature, solution A is pH 5 and B is pH 7. How do both ion concentrations compare?",
+    "options": [
+      "A has 100 times B’s H⁺ and one-hundredth B’s OH⁻.",
+      "A has 100 times both ion concentrations.",
+      "A has one-hundredth B’s H⁺ and 100 times B’s OH⁻.",
+      "A has twice B’s H⁺ and half B’s OH⁻."
+    ],
+    "answers": [
+      0
+    ],
+    "explain": "Lower pH means more H⁺; at fixed temperature, the corresponding OH⁻ concentration decreases inversely.",
+    "reasoning": [
+      "A is two pH units below B, so its H⁺ is 10² = 100 times as high.",
+      "The product [H⁺][OH⁻] is constant at a fixed temperature.",
+      "Therefore A’s OH⁻ is 1/100 of B’s."
+    ],
+    "optionFeedback": [
+      "Lower pH means more H⁺; at fixed temperature, the corresponding OH⁻ concentration decreases inversely.",
+      "At a fixed temperature the H⁺–OH⁻ product is constant, so the concentrations move oppositely.",
+      "That reverses the direction associated with lower pH.",
+      "A two-unit pH difference corresponds to a factor of 100, not 2."
+    ],
+    "hint": "Use both the logarithmic pH scale and the inverse relation between H⁺ and OH⁻.",
+    "visual": null,
+    "multi": false
+  },
+  {
+    "id": "h023",
+    "difficulty": "challenge",
+    "topic": "Water & pH",
+    "prompt": "Equal volumes of unbuffered pH 3 and pH 5 solutions are mixed. Assume H⁺ concentrations simply average, with no additional acid–base reactions. Which approximate final pH is closest?",
+    "options": [
+      "3.30.",
+      "4.00.",
+      "8.00.",
+      "2.00."
+    ],
+    "answers": [
+      0
+    ],
+    "explain": "Under the stated simplified assumptions, average the H⁺ concentrations, then convert back to pH.",
+    "reasoning": [
+      "pH 3 corresponds to 0.001 and pH 5 to 0.00001 in relative molar concentration units.",
+      "Their equal-volume average is 0.000505 M.",
+      "−log₁₀(0.000505) is approximately 3.30. The more acidic sample dominates the H⁺ contribution."
+    ],
+    "optionFeedback": [
+      "Under the stated simplified assumptions, average the H⁺ concentrations, then convert back to pH.",
+      "Averaging pH values is incorrect because pH is logarithmic.",
+      "Adding the pH numbers has no chemical meaning.",
+      "Diluting the pH 3 solution with a less acidic solution does not increase H⁺ tenfold."
+    ],
+    "hint": "Average 10⁻³ and 10⁻⁵, not 3 and 5.",
+    "visual": null,
+    "multi": false
+  },
+  {
+    "id": "h024",
+    "difficulty": "challenge",
+    "topic": "Water & pH",
+    "prompt": "The same small amount of acid is added to equal volumes of a buffer and pure water. The buffer’s pH changes much less. What does this best show?",
+    "options": [
+      "The buffer reduces changes in free H⁺ by reacting with some added acid.",
+      "The buffer must keep pH exactly 7 under every condition.",
+      "The acid has disappeared without reacting with anything.",
+      "The buffer prevents all changes in H⁺ concentration forever."
+    ],
+    "answers": [
+      0
+    ],
+    "explain": "Buffers resist pH change over a limited range and capacity.",
+    "reasoning": [
+      "The equal acid addition provides a controlled comparison.",
+      "Buffer components can take up some added H⁺, reducing the change in free H⁺.",
+      "A smaller pH change supports buffering, not perfect or unlimited pH control."
+    ],
+    "optionFeedback": [
+      "Buffers resist pH change over a limited range and capacity.",
+      "Buffers can operate at different pH values and have finite capacity.",
+      "The smaller change is explained by chemical reactions, not disappearance of matter.",
+      "A buffer resists change; it does not provide unlimited, perfect control."
+    ],
+    "hint": "“Resists change” is different from “never changes.”",
+    "visual": null,
+    "multi": false
+  },
+  {
+    "id": "h025",
+    "difficulty": "challenge",
+    "topic": "Water & pH",
+    "prompt": "Water molecules remain intact as liquid water evaporates. Which interaction is mainly overcome when those molecules separate from neighboring water molecules?",
+    "options": [
+      "Intermolecular attractions, including hydrogen bonds.",
+      "The covalent O–H bonds inside each water molecule.",
+      "Peptide bonds linking the water molecules.",
+      "Every chemical bond in the water sample."
+    ],
+    "answers": [
+      0
+    ],
+    "explain": "Distinguish separating molecules from breaking molecules into different substances.",
+    "reasoning": [
+      "Each water molecule keeps its oxygen and hydrogen atoms covalently linked.",
+      "Escaping molecules separate from neighboring water molecules.",
+      "This requires overcoming intermolecular attractions rather than cleaving internal O–H bonds."
+    ],
+    "optionFeedback": [
+      "Distinguish separating molecules from breaking molecules into different substances.",
+      "Breaking those bonds would split water chemically; the prompt says molecules remain intact.",
+      "Water molecules are not connected by peptide bonds.",
+      "Evaporation is a physical change, not destruction of all molecular bonds."
+    ],
+    "hint": "Which bonds are inside a water molecule, and which attractions act between molecules?",
+    "visual": null,
+    "multi": false
+  },
+  {
+    "id": "h026",
+    "difficulty": "challenge",
+    "topic": "Experiments",
+    "prompt": "Two enzyme reactions start with the same total substrate. What does the table support most directly?",
+    "options": [
+      "A is faster initially, but both reach the same measured final product amount.",
+      "A must produce twice as much final product as B.",
+      "B contains no functional enzyme.",
+      "A must have a lower final substrate amount because its initial rate is higher."
+    ],
+    "answers": [
+      0
+    ],
+    "explain": "A reaction’s speed and its final yield are different measurements.",
+    "reasoning": [
+      "At 20 seconds, A has made 8 mg and B only 4 mg.",
+      "At 100 seconds, each has made 10 mg.",
+      "The evidence supports a faster early reaction in A, with equal measured final yield."
+    ],
+    "optionFeedback": [
+      "A reaction’s speed and its final yield are different measurements.",
+      "Both reach 10 mg at the final measurement.",
+      "B produces product, showing catalytic activity under the conditions tested.",
+      "The table shows equal final product; a faster initial rate alone does not determine a different final yield."
+    ],
+    "hint": "Compare an early interval separately from the final amount.",
+    "visual": {
+      "headers": [
+        "Time (s)",
+        "A product (mg)",
+        "B product (mg)"
+      ],
+      "rows": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          20,
+          8,
+          4
+        ],
+        [
+          100,
+          10,
+          10
+        ]
+      ]
+    },
+    "multi": false
+  },
+  {
+    "id": "h027",
+    "difficulty": "challenge",
+    "topic": "Experiments",
+    "prompt": "A student compares enzyme activity at pH 4 and pH 8, but also uses twice as much enzyme at pH 8. The pH 8 tube is faster. What is the strongest conclusion?",
+    "options": [
+      "The experiment cannot isolate the effect of pH because enzyme amount also changed.",
+      "Higher pH alone caused the faster reaction.",
+      "More enzyme alone caused the faster reaction.",
+      "The two factors cancel, so the comparison is automatically fair."
+    ],
+    "answers": [
+      0
+    ],
+    "explain": "Changing two candidate causes at once creates a confounded comparison.",
+    "reasoning": [
+      "The measured rate differs.",
+      "Both pH and enzyme amount differ between the tubes.",
+      "Repeat with equal enzyme, substrate, temperature, and measurement time while changing pH alone."
+    ],
+    "optionFeedback": [
+      "Changing two candidate causes at once creates a confounded comparison.",
+      "The enzyme-amount change provides another explanation.",
+      "pH changed too, so its possible contribution cannot be excluded.",
+      "There is no evidence that the effects cancel."
+    ],
+    "hint": "List every variable changed between the tubes.",
+    "visual": null,
+    "multi": false
+  },
+  {
+    "id": "h028",
+    "difficulty": "challenge",
+    "topic": "Experiments",
+    "prompt": "In the pathway shown, E3 is disabled. A researcher supplies C from outside the pathway while E4 remains active. Which outcome is possible through the depicted steps?",
+    "options": [
+      "D can be produced from the supplied C despite the E3 block.",
+      "Supplying C automatically repairs E3.",
+      "B can no longer be made because E3 is disabled.",
+      "D cannot be made unless every earlier step is functioning."
+    ],
+    "answers": [
+      0
+    ],
+    "explain": "Adding a downstream intermediate can bypass a missing upstream reaction.",
+    "reasoning": [
+      "The E3 block prevents A from being converted into C.",
+      "Externally supplied C no longer depends on E3 for its availability.",
+      "Active E4 can convert that C into D."
+    ],
+    "optionFeedback": [
+      "Adding a downstream intermediate can bypass a missing upstream reaction.",
+      "Bypassing a blocked step does not restore the disabled enzyme.",
+      "B uses the separate E2 branch from A.",
+      "Providing a downstream intermediate can bypass an earlier blocked step."
+    ],
+    "hint": "Trace only the steps required after the added intermediate.",
+    "visual": "pathway",
+    "multi": false
+  },
+  {
+    "id": "h029",
+    "difficulty": "challenge",
+    "topic": "Experiments",
+    "prompt": "Treatment A produces rates of 8, 10, and 12 units/min in three trials; treatment B produces 9, 10, and 11. Which conclusion is best supported by these data alone?",
+    "options": [
+      "Both have a mean of 10, but A has a larger observed spread.",
+      "A has the higher mean because its maximum is higher.",
+      "B is proved more effective in all future trials.",
+      "The treatments must have identical effects because their means match."
+    ],
+    "answers": [
+      0
+    ],
+    "explain": "Summarize central tendency and variability separately, and avoid claims the small sample cannot establish.",
+    "reasoning": [
+      "A’s mean is (8 + 10 + 12)/3 = 10. B’s mean is also 10.",
+      "A ranges from 8 to 12, while B ranges from 9 to 11.",
+      "A has the larger observed spread; more evidence is needed for stronger general conclusions."
+    ],
+    "optionFeedback": [
+      "Summarize central tendency and variability separately, and avoid claims the small sample cannot establish.",
+      "The mean depends on all values, not just the maximum.",
+      "These trials do not prove a universal difference in effectiveness.",
+      "Matching sample means do not prove identical population effects; their observed spreads differ."
+    ],
+    "hint": "Calculate both averages and compare the ranges.",
+    "visual": null,
+    "multi": false
+  },
+  {
+    "id": "h030",
+    "difficulty": "challenge",
+    "topic": "Experiments",
+    "prompt": "Equal amounts of BTB begin at the same pH. Tube A has sprouting seeds and is sealed; B has dry seeds and is open. Only A turns yellow. Which follow-up would best isolate the effect of seed condition?",
+    "options": [
+      "Use equal seed masses in otherwise identical sealed tubes, with an indicator-only control.",
+      "Repeat A sealed and B open with more BTB in A.",
+      "Remove all controls because the color change is obvious.",
+      "Conclude immediately that dry seeds never respire."
+    ],
+    "answers": [
+      0
+    ],
+    "explain": "Seal status is a confounding variable because gas exchange can affect CO₂ accumulation.",
+    "reasoning": [
+      "Sprouting condition and exposure to air both differ in the original setup.",
+      "Matching seal status and seed mass improves comparability.",
+      "An indicator-only control checks baseline changes not caused by seeds."
+    ],
+    "optionFeedback": [
+      "Seal status is a confounding variable because gas exchange can affect CO₂ accumulation.",
+      "This adds another difference instead of controlling the original one.",
+      "Controls are needed to interpret why the color changed.",
+      "An open tube can exchange gases, and lack of color change does not prove zero respiration."
+    ],
+    "hint": "What besides seed condition might change CO₂ accumulation?",
+    "visual": null,
+    "multi": false
+  }
+];
+const TOPICS=['Enzymes','Molecules','Proteins','Building & breaking','Water & pH','Experiments'];
+const $=id=>document.getElementById(id), esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const shuffle=a=>{const b=[...a];for(let i=b.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[b[i],b[j]]=[b[j],b[i]]}return b};
+const btn=(text,action,cls='')=>`<button type="button" class="${cls}" data-action="${action}">${text}</button>`;
+let profile='1', data, view='Practice', filter='All topics', session=null, deck=null, flashIndex=0, flipped=false, explainIndex=0, explainShown=false;
+const fresh=()=>({stats:{},cards:{},history:[],session:null});
+function read(){try{const x=JSON.parse(localStorage.getItem('biology-study-v1-'+profile));return x&&x.stats&&x.cards&&Array.isArray(x.history)?x:fresh()}catch{return fresh()}}
+function save(){data.session=session;try{localStorage.setItem('biology-study-v1-'+profile,JSON.stringify(data))}catch{$('storage-warning').textContent=' Browser storage is unavailable; this visit works, but progress will not be saved.'}}
+function studyLevel(){return data.studyLevel||'core'}
+function pool(){return BANK.filter(q=>(filter==='All topics'||q.topic===filter)&&(studyLevel()==='all'||(studyLevel()==='challenge'?q.difficulty==='challenge':q.difficulty!=='challenge')))}
+function chips(){return `<div class="row section"><label for="study-level"><strong>Difficulty</strong><select id="study-level"><option value="core" ${studyLevel()==='core'?'selected':''}>Core · 70 questions</option><option value="challenge" ${studyLevel()==='challenge'?'selected':''}>Challenge · 30 reasoning questions</option><option value="all" ${studyLevel()==='all'?'selected':''}>Mixed · all 100 questions</option></select></label><span class="small">${pool().length} questions match your filters</span></div><div class="chips" aria-label="Topic filter">${['All topics',...TOPICS].map(t=>`<button class="chip ${t===filter?'selected':''}" aria-pressed="${t===filter}" data-topic="${esc(t)}">${esc(t)}</button>`).join('')}</div>`}
+function go(v){view=v;render();window.scrollTo({top:0})}
+function render(){ $('nav').innerHTML=['Practice','Games','Flashcards','Explain','Learn','Progress'].map(v=>`<button class="${view===v?'active':''}" data-nav="${v}" ${view===v?'aria-current="page"':''}>${v}</button>`).join(''); if(view==='Practice')session?renderSession():home();else if(view==='Games')renderGames();else if(view==='Flashcards')flash();else if(view==='Explain')explain();else if(view==='Learn')learn();else progress(); }
+function home(){const seen=Object.keys(data.stats).length,missed=BANK.filter(q=>data.stats[q.id]?.last===false).length; $('main').innerHTML=`<div class="hero"><div><div class="eyebrow">Your biology practice space</div><h1>Understand it.<br>Remember it.</h1><p class="muted">Short rounds, clear explanations, and a fresh chance to learn. Start with a mixed practice, then revisit the ideas that need another look.</p><span class="pill">${BANK.length} questions · 6 topics · core + challenge</span></div><div class="hero-art"><div class="eyebrow">Small steps. Strong connections.</div><div class="chain" aria-hidden="true"><span>Try</span><i></i><span>Learn</span><i></i><span>Recall</span></div><strong>${seen} / ${BANK.length} questions explored</strong><div class="small">${missed?`${missed} question${missed===1?'':'s'} ready for another attempt.`:'Build understanding one explanation at a time.'}</div></div></div><div class="challenge-banner"><div><strong>Ready for deeper reasoning?</strong><p>30 harder questions. Interpret evidence, trace consequences, and solve multi-step problems.</p></div><button class="primary" data-action="challenge-start">Start reasoning challenge</button></div><div class="arcade-banner"><div><strong>🎮 The Biology Arcade is open</strong><p>Escape rooms, lab monsters, molecule building, and memory puzzles.</p></div><button class="primary" data-open-arcade>Play games</button></div><div class="row between"><h2>Choose your next round</h2><span class="small">Questions and options shuffle each time</span></div>${chips()}<div class="grid"><article class="card mode"><div class="number">01 / LEARN AS YOU GO</div><h3>Quick practice</h3><p>10 questions with hints and immediate explanations. Try an answer before revealing the reasoning.</p>${btn('Start practice','start-quick','primary')}</article><article class="card mode"><div class="number">02 / TEST YOUR RECALL</div><h3>Practice test</h3><p>20 questions, with answers and explanations held until you finish. No timer, so you can focus.</p>${btn('Start test','start-exam')}</article><article class="card mode"><div class="number">03 / WORK ON WEAK SPOTS</div><h3>Targeted review</h3><p>Up to 10 questions, prioritizing missed answers and lightly practiced concepts.</p>${btn('Review weak spots','start-adaptive')}</article></div><div class="notice">For your first session: do a quick practice, read each explanation, then try Flashcards without looking at the answers. Question counts are capped at the size of your selected topic.</div>`}
+function start(mode,ids){let available=ids?BANK.filter(q=>ids.includes(q.id)):pool(); if(!available.length)return;let chosen;if(mode==='adaptive'){chosen=shuffle(available).sort((a,b)=>priority(b)-priority(a)).slice(0,10)}else{const candidates=shuffle(available);const n=ids?candidates.length:Math.min(mode==='exam'?20:10,candidates.length);if(filter==='All topics'&&!ids){chosen=[];for(const t of shuffle(TOPICS)){const q=candidates.find(q=>q.topic===t);if(q&&chosen.length<n)chosen.push(q)}chosen=shuffle([...chosen,...candidates.filter(q=>!chosen.includes(q)).slice(0,n-chosen.length)])}else chosen=candidates.slice(0,n)}session={mode,level:studyLevel(),items:chosen.map(q=>({id:q.id,order:shuffle(q.options.map((_,i)=>i)),selected:[],checked:false})),index:0,complete:false,recorded:false};save();go('Practice')}
+function priority(q){const s=data.stats[q.id];return !s?4:(s.last===false?20:0)+Math.max(0,3-s.attempts)}
+function isCorrect(item){const q=BANK.find(q=>q.id===item.id);return item.selected.length===q.answers.length&&q.answers.every(a=>item.selected.includes(a))}
+function record(item){const s=data.stats[item.id]||{attempts:0,correct:0};s.attempts++;s.last=isCorrect(item);s.correct+=s.last?1:0;data.stats[item.id]=s}
+function table(headers,rows){return `<table><thead><tr>${headers.map(h=>`<th scope="col">${h}</th>`).join('')}</tr></thead><tbody>${rows.map(r=>`<tr>${r.map(x=>`<td>${x}</td>`).join('')}</tr>`).join('')}</tbody></table>`}
+function visual(type){if(!type)return '';if(typeof type==='object')return `<div class="visual">${table(type.headers,type.rows)}</div>`;let html='';if(type==='rates')html=table(['Time (s)','Product (mg)'],[[0,'0.00'],[10,'0.25'],[20,'0.50'],[30,'0.70'],[40,'0.80'],[50,'0.85'],[60,'0.85']]);if(type==='btb')html=table(['Tube','Contents','After 5 min'],[['A','BTB only','Blue'],['B','BTB + sprouting seeds','Yellow'],['C','BTB + dilute acid','Yellow'],['D','BTB + carbonated water','Yellow'],['E','BTB + dry seeds','Blue']])+`<p class="legend">Equal indicator volumes and otherwise matching conditions. BTB is blue in basic conditions and yellow in acidic conditions.</p>`;if(type==='gut')html=table(['Location','Polymers (units)','Monomers (units)'],[[1,10,0],[2,5,5],[3,0,8],[4,0,4],[5,0,1]])+'<p class="legend">Simplified model; arbitrary amount units.</p>';if(type==='peptide')html=`<div class="chemical" aria-label="H2N bond A CH(R) then C double bond O bond B NH bond C CH(R) bond D COOH">H₂N<b>—<small>A</small></b>CH(R)—C(=O)<b>—<small>B</small></b>NH<b>—<small>C</small></b>CH(R)<b>—<small>D</small></b>COOH</div><p class="legend">Simplified dipeptide. Labels identify the underlined bonds.</p>`;if(type==='pathway')html=`<svg viewBox="0 0 520 235" role="img" aria-label="Start goes to A via E1. A branches to B via E2 and C via E3. C goes to D via E4."><defs><marker id="arr" markerWidth="7" markerHeight="7" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6" fill="#526861"/></marker></defs><g stroke="#526861" stroke-width="2" fill="none" marker-end="url(#arr)"><path d="M90 115H188"/><path d="M242 105L340 55"/><path d="M242 125L340 178"/><path d="M390 182H465"/></g><g fill="#e2efe7" stroke="#98b8a5"><rect x="12" y="90" width="78" height="48" rx="12"/><circle cx="217" cy="115" r="25"/><circle cx="365" cy="43" r="25"/><circle cx="365" cy="182" r="25"/><circle cx="491" cy="182" r="25"/></g><g fill="#172e2a" font-family="system-ui" font-size="18" text-anchor="middle"><text x="51" y="120">Start</text><text x="217" y="121">A</text><text x="365" y="49">B</text><text x="365" y="188">C</text><text x="491" y="188">D</text><text x="140" y="99">E1</text><text x="280" y="57">E2</text><text x="280" y="170">E3</text><text x="426" y="167">E4</text></g></svg><p class="legend">An original simplified pathway. Each labeled arrow is one enzyme-catalyzed step.</p>`;if(type==='phospholipid')html=`<svg viewBox="0 0 430 200" role="img" aria-label="A phospholipid has one phosphate-containing head and two long fatty-acid tails."><circle cx="88" cy="100" r="43" fill="#d3e8db" stroke="#155c4c" stroke-width="2"/><text x="88" y="105" font-size="17" text-anchor="middle" fill="#172e2a">Head</text><path d="M127 77L160 60L188 77L218 60L249 77L280 60L311 77L343 60M127 123L160 140L188 123L218 140L249 123L280 140L311 123L343 140" fill="none" stroke="#62548c" stroke-width="7"/><text x="236" y="190" font-size="16" text-anchor="middle" fill="#172e2a">Two fatty-acid tails</text><text x="88" y="30" font-size="16" text-anchor="middle" fill="#172e2a">Contains phosphate</text></svg>`;return `<div class="visual">${html}</div>`}
+function renderSession(){if(session.complete){results();return}const item=session.items[session.index],q=BANK.find(q=>q.id===item.id), exam=session.mode==='exam';$('main').innerHTML=`<div class="question"><div class="row between"><span class="eyebrow">${exam?'Practice test':session.mode==='adaptive'?'Targeted review':'Quick practice'}</span>${btn('End round','end','ghost')}</div><div class="row between"><span class="small">Question ${session.index+1} of ${session.items.length}</span><span class="pill">${esc(q.topic)}${q.difficulty==='challenge'?' · Challenge':''}</span></div><div class="progress" role="progressbar" aria-label="Round progress" aria-valuenow="${session.index}" aria-valuemin="0" aria-valuemax="${session.items.length}"><span style="width:${session.index/session.items.length*100}%"></span></div><div class="card"><h2 id="prompt">${esc(q.prompt)}</h2><p class="small">${q.multi?'Select all that apply. Full credit requires exactly the correct choices.':'Choose one answer.'}</p>${visual(q.visual)}<div class="options" role="group" aria-labelledby="prompt">${item.order.map((i,n)=>{const sel=item.selected.includes(i), checked=item.checked&&!exam;return `<button type="button" class="option ${sel?'selected':''} ${checked&&q.answers.includes(i)?'correct':''} ${checked&&sel&&!q.answers.includes(i)?'wrong':''}" data-option="${i}" aria-pressed="${sel}" ${checked?'disabled':''}><span class="letter">${String.fromCharCode(65+n)}</span><span>${esc(q.options[i])}${checked&&q.answers.includes(i)?' ✓':''}${checked&&sel&&!q.answers.includes(i)?' ✕':''}</span></button>`}).join('')}</div>${item.checked&&!exam?feedback(q,item):''}<div class="row between"><div>${!exam&&!item.checked?btn('Need a hint?','hint','ghost'):exam?btn('Previous','previous','ghost'):''}</div>${exam?btn(session.index===session.items.length-1?'Finish test':'Next question','next','primary'):item.checked?btn(session.index===session.items.length-1?'See results':'Next question','next','primary'):`<button type="button" class="primary" data-action="check" ${item.selected.length?'':'disabled'}>Check answer</button>`}</div><div id="hint" aria-live="polite"></div>${exam?`<p class="small">${session.items.filter(i=>i.selected.length).length} / ${session.items.length} answered. Unanswered questions count as incorrect.</p>`:''}</div></div>`}
+function reasoningFeedback(q,item){if(!q.reasoning)return '';const selected=(item?.selected||[]).filter(i=>!q.answers.includes(i));return `<div class="reasoning"><h3>Reasoning, step by step</h3><ol>${q.reasoning.map(x=>`<li>${esc(x)}</li>`).join('')}</ol>${selected.length?`<h3>Why your answer does not follow</h3>${selected.map(i=>`<p>${esc(q.optionFeedback[i])}</p>`).join('')}`:''}<details><summary>Why the other choices fail</summary>${q.options.map((x,i)=>q.answers.includes(i)?'':`<p><strong>${esc(x)}</strong><br>${esc(q.optionFeedback[i])}</p>`).join('')}</details></div>`}
+function feedback(q,item){return `<div class="feedback ${isCorrect(item)?'':'wrong'}" role="status"><strong>${isCorrect(item)?'You’ve got it.':'Let’s connect the idea.'}</strong><p><b>Answer:</b> ${q.answers.map(i=>esc(q.options[i])).join('; ')}</p><p>${esc(q.explain)}</p>${reasoningFeedback(q,item)}</div>`}
+function finish(){if(session.recorded)return;if(session.mode==='exam')session.items.forEach(record);session.complete=true;session.recorded=true;const correct=session.items.filter(isCorrect).length;data.history.unshift({date:Date.now(),mode:session.mode,total:session.items.length,correct});data.history=data.history.slice(0,30);save();render();window.scrollTo({top:0})}
+function results(){const correct=session.items.filter(isCorrect).length,wrong=session.items.filter(i=>!isCorrect(i));$('main').innerHTML=`<div class="question"><div class="eyebrow">Round complete</div><h1>A little clearer.<br>A little stronger.</h1><div class="card"><div class="row between"><div><div class="score">${Math.round(correct/session.items.length*100)}%</div><p>${correct} of ${session.items.length} correct</p></div><div class="stack">${wrong.length?btn('Practice missed questions','retry','primary'):btn('Try another round','again','primary')}${btn('Back to practice','home')}</div></div><p class="muted">${wrong.length?'Read the explanations, then try answering those questions again without the choices.':'Great round. Try explaining the ideas in your own words, or choose a different topic.'}</p></div><h2 class="section">Your answer review</h2>${session.items.map((it,n)=>{const q=BANK.find(q=>q.id===it.id);return `<details ${isCorrect(it)?'':'open'}><summary>${isCorrect(it)?'✓':'↻'} ${n+1}. ${esc(q.prompt)}</summary><p class="small">Your answer: ${it.selected.length?it.selected.map(i=>esc(q.options[i])).join('; '):'Unanswered'}</p>${visual(q.visual)}${feedback(q,it)}</details>`}).join('')}</div>`}
+function initDeck(){const p=pool();const due=p.filter(q=>!data.cards[q.id]||data.cards[q.id].due<=Date.now());deck=shuffle(due.length?due:p).slice(0,15).map(q=>q.id);flashIndex=0;flipped=false}
+function flash(){if(!deck)initDeck();if(flashIndex>=deck.length){$('main').innerHTML=`<div class="question"><h1>Recall round complete.</h1><p>You reviewed ${deck.length} cards. Cards marked “Again” return sooner; cards you know are scheduled farther apart.</p>${btn('Start another set','newcards','primary')}${chips()}</div>`;return}const q=BANK.find(q=>q.id===deck[flashIndex]);$('main').innerHTML=`<div class="question"><div class="eyebrow">Active recall</div><h1>Think first. Then turn.</h1><p class="muted">Say the answer out loud before revealing it. Due cards are selected first; up to 15 cards per set.</p>${chips()}<div class="row between"><span class="pill">${esc(q.topic)}${q.difficulty==='challenge'?' · Challenge':''}</span><span class="small">Card ${flashIndex+1} / ${deck.length}</span></div><div class="card flash section"><h2>${esc(q.flashPrompt||q.prompt)}</h2>${visual(q.visual)}${flipped?`<p class="answer">${q.answers.map(i=>esc(q.options[i])).join('; ')}</p><p>${esc(q.explain)}</p>${reasoningFeedback(q,null)}`:`<p class="muted">No answer choices. What do you remember?</p>`}</div><div class="row section">${flipped?btn('Again — review soon','card-again')+btn('Got it — space it out','card-known','primary'):btn('Reveal answer','flip','primary')}</div><p class="small">Self-rated recall is kept separate from quiz scores.</p></div>`}
+const EXPLAIN=[
+['Enzymes','Why does boiling often stop an enzyme from working?','Heat can disrupt the interactions maintaining the protein’s shape. If the active site changes, substrate binding and catalysis are impaired. The enzyme is not simply “used up.”',['Connect heat to protein shape.','Connect active-site shape to function.','Distinguish denaturation from consumption.']],
+['Proteins','Explain the difference between a peptide bond and a hydrogen bond.','A peptide bond is a covalent C–N bond linking amino-acid residues. Hydrogen bonds are attractions involving partial charges; they can stabilize protein folding and connect separate water molecules.',['Mention covalent electron sharing for peptide bonds.','Describe partial-charge attraction for hydrogen bonds.','Give one location for each.']],
+['Building & breaking','How do dehydration synthesis and hydrolysis move water in opposite directions?','In the simplified model, dehydration joins units with net release of water. Hydrolysis uses water to split a covalent link, contributing H and OH to the pieces.',['State which process builds and which breaks.','Put water on the correct side of each reaction.']],
+['Water & pH','A solution goes from pH 8 to pH 6. Explain what happens to H⁺ and OH⁻ at a fixed temperature.','The pH falls by two units, so H⁺ becomes 100 times as high. At a fixed temperature, H⁺ and OH⁻ have a constant product, so OH⁻ becomes one-hundredth as high.',['Use a factor of 100, not 2.','Give the correct direction for H⁺.','Give the opposite direction for OH⁻.']],
+['Experiments','Why does yellow BTB not prove that a sample produced carbon dioxide?','BTB indicates pH. CO₂ can acidify water, but other acids also make BTB yellow. Controls and an additional CO₂ test, such as the classroom limewater test, help distinguish explanations.',['Identify what BTB actually detects.','Name an alternative cause of yellow.','Suggest useful additional evidence.']],
+['Enzymes','A product-versus-time curve levels off. What would you test before concluding that the enzyme was destroyed?','I would add more substrate while holding other conditions constant. If product formation restarts, functional enzyme remains and substrate depletion is supported. A plateau alone does not identify a unique cause.',['Distinguish a measured result from its possible cause.','Suggest changing one factor.','Explain what a restart would show.']],
+['Proteins','Compare primary, secondary, tertiary, and quaternary protein structure.','Primary is amino-acid sequence; secondary is local helices and sheets; tertiary is the overall fold of one polypeptide; quaternary is the arrangement of multiple polypeptide subunits.',['Name all four levels.','Distinguish one chain’s fold from multiple subunits.']],
+['Molecules','How does phospholipid structure help form a cell membrane?','Phospholipids have water-attracting polar heads and water-avoiding nonpolar tails. In a bilayer, heads face the watery environments and tails cluster inward.',['Describe the two chemically different regions.','Explain the orientation of both in a bilayer.']]];
+function explain(){const e=EXPLAIN[explainIndex];$('main').innerHTML=`<div class="question"><div class="eyebrow">Teach it back</div><h1>Could you explain it?</h1><p class="muted">Write a few sentences or explain aloud to a study partner. Compare with the checklist yourself; your writing is not automatically graded.</p><span class="pill">${e[0]} · ${explainIndex+1} / ${EXPLAIN.length}</span><div class="card section"><h2>${esc(e[1])}</h2><label for="written" class="small">Your explanation (optional; not saved)</label><textarea id="written" placeholder="I think this happens because…"></textarea><div id="model"></div><div class="row section">${btn('Show model & checklist','model','primary')}${btn('Next prompt','nextexplain')}</div></div></div>`}
+const LESSONS=[
+['Enzymes','Shape makes the reaction possible.','Enzymes speed reactions by lowering activation energy. Their active sites bind suitable substrates, and they are regenerated after catalysis. Temperature and pH affect their activity.','A plateau in product formation does not mean the enzyme was consumed. Try adding substrate and holding other conditions constant.','Learn the difference: high heat can denature a protein; moderate cooling usually slows collisions.'],
+['Molecules','Match structure to function.','Carbohydrates include sugars used as fuel. Triglycerides store energy. Phospholipids form membrane bilayers. Proteins perform roles such as transport, defense, structure, and catalysis. Nucleic acids store and transmit genetic information.','A long hydrocarbon chain with a carboxyl group suggests a fatty acid. A phosphate head plus two fatty-acid tails suggests a phospholipid.','Carbon dioxide contains carbon, but is classified as inorganic. Carbon alone is not a sufficient test.'],
+['Proteins','Sequence → folding → function.','Primary: amino-acid sequence. Secondary: alpha helices and beta sheets. Tertiary: one chain’s overall fold, influenced by R-group interactions. Quaternary: multiple polypeptide subunits together.','Find a peptide bond by locating –C(=O)–NH–. It is the C–N link between amino-acid residues.','Denaturation can disrupt folding without breaking the peptide bonds of the primary structure.'],
+['Building & breaking','Track the water.','In simplified dehydration synthesis, units join and water is released. In hydrolysis, water is used to split a covalent link. Enzymes can catalyze these reactions.','A linear chain of n amino acids has n − 1 peptide links. Six amino acids have five links.','In the condensation model for a peptide link, OH comes from a carboxyl group and H from an amino group.'],
+['Water & pH','Inside water versus between waters.','Inside one water molecule, O–H bonds are polar covalent. Between separate water molecules, a partially positive H can form a hydrogen bond with a partially negative O.','A one-unit fall in pH means ten times as much H⁺; two units means 100 times. At a fixed temperature, OH⁻ moves in the opposite direction.','Do not assume that every bond involving hydrogen is a hydrogen bond.'],
+['Experiments','Read the evidence before the conclusion.','Identify what changes, what is measured, and what stays constant. A negative control provides a baseline. Average reaction rate is change in product divided by change in time.','BTB is a pH indicator. Yellow shows acidic conditions, which can be caused by CO₂ or other acids. Limewater can provide additional classroom evidence for CO₂.','Follow each arrow in a pathway. Blocking one enzyme can affect its downstream products while leaving another branch available.']];
+function learn(){$('main').innerHTML=`<div class="eyebrow">The essentials</div><h1>Six ideas to connect.</h1><p class="muted">Use these compact lessons before a round—or when an explanation still feels unclear.</p><div class="two">${LESSONS.map((l,i)=>`<article class="card"><span class="pill">${l[0]}</span><h2>${l[1]}</h2><p>${l[2]}</p><details><summary>Make the connection</summary><p>${l[3]}</p><p class="muted">${l[4]}</p>${i===2?visual('peptide'):i===1?visual('phospholipid'):i===5?visual('pathway'):''}</details><button data-study="${esc(l[0])}">Practice this topic</button></article>`).join('')}</div><section class="card section"><span class="pill">Explore pH</span><h2>Move one unit. Change by ten.</h2><p>Compare hydrogen-ion concentration with pH 7. This is the introductory concentration approximation.</p><label for="ph">pH: <strong id="ph-value">7</strong></label><input id="ph" type="range" min="1" max="13" value="7" step="1"><p id="ph-result" aria-live="polite">Same H⁺ concentration as pH 7.</p></section><div class="notice">Coverage follows readable parts of the video, including enzymes, molecular structures, proteins, hydrolysis, water, pH, indicators, pathway diagrams, and data interpretation. Some filmed wording and labels were too blurry to recover exactly. The diagrams here are newly drawn teaching examples.</div>`}
+function progress(){const stats=Object.values(data.stats),total=stats.reduce((a,s)=>a+s.attempts,0),correct=stats.reduce((a,s)=>a+s.correct,0);$('main').innerHTML=`<div class="eyebrow">${$('learner').selectedOptions[0].textContent} · personal record</div><h1>See what is sticking.</h1><p class="muted">Quiz accuracy includes repeat attempts. Flashcard self-ratings are tracked separately. These are study signals, not a prediction of your exam grade.</p><div class="metrics"><div class="metric"><strong>${stats.length}/${BANK.length}</strong><span>Unique questions tried</span></div><div class="metric"><strong>${total?Math.round(correct/total*100)+'%':'—'}</strong><span>Answer accuracy · ${total} attempts</span></div><div class="metric"><strong>${Object.keys(data.cards).length}</strong><span>Flashcards reviewed</span></div></div><div class="two"><section class="card"><h2>Topic accuracy</h2>${TOPICS.map(t=>{const qs=BANK.filter(q=>q.topic===t),ss=qs.map(q=>data.stats[q.id]).filter(Boolean),n=ss.reduce((a,s)=>a+s.attempts,0),c=ss.reduce((a,s)=>a+s.correct,0);return `<div class="topic-row"><strong>${t}</strong><span>${n?Math.round(c/n*100)+'%':'Not tried'}</span><span class="small">${ss.length}/${qs.length} questions explored · ${n} attempts</span><div class="progress"><span style="width:${n?c/n*100:0}%"></span></div></div>`}).join('')}</section><section class="card"><h2>Recent completed rounds</h2>${data.history.length?data.history.slice(0,8).map(h=>`<div class="topic-row"><span>${h.mode==='exam'?'Practice test':h.mode==='adaptive'?'Targeted review':'Quick practice'}<br><small class="muted">${new Date(h.date).toLocaleDateString()}</small></span><strong>${h.correct}/${h.total}</strong></div>`).join(''):'<p class="muted">Your completed rounds will appear here.</p>'}<div class="section">${btn('Review weak spots','start-adaptive','primary')}</div></section></div><div class="notice">Progress is saved on this device and browser when storage is available. The three learner slots keep your scores separate. Downloaded copies and hosted copies have separate progress.</div><div class="section">${btn('Reset this learner’s progress','reset','ghost')}</div>`}
+$('main').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;const a=b.dataset.action;
+ if(a==='challenge-start'){data.studyLevel='challenge';filter='All topics';deck=null;save();start('quick');return}
+ if(b.dataset.topic){filter=b.dataset.topic;deck=null;render();return}if(b.dataset.study){filter=b.dataset.study;start('quick');return}
+ if(b.dataset.option!==undefined){const it=session.items[session.index],q=BANK.find(q=>q.id===it.id);if(it.checked&&session.mode!=='exam')return;const i=Number(b.dataset.option);it.selected=q.multi?(it.selected.includes(i)?it.selected.filter(x=>x!==i):[...it.selected,i]):[i];save();renderSession();return}
+ if(a?.startsWith('start-')){if(session&&!session.complete&&!confirm('Replace your current unfinished round? Checked practice answers stay in your record.'))return;start(a.slice(6));return}
+ if(a==='check'){const it=session.items[session.index];if(!it.selected.length||it.checked)return;it.checked=true;record(it);save();renderSession()}
+ if(a==='next'){if(session.index===session.items.length-1){if(session.mode==='exam'&&session.items.some(i=>!i.selected.length)&&!confirm('Some questions are unanswered and will count as incorrect. Finish anyway?'))return;finish()}else{session.index++;save();renderSession();window.scrollTo({top:0})}}
+ if(a==='previous'){session.index=Math.max(0,session.index-1);save();renderSession()}
+ if(a==='hint'){$('hint').innerHTML=`<div class="hint">${esc(BANK.find(q=>q.id===session.items[session.index].id).hint)}</div>`}
+ if(a==='end'){if(confirm('End this unfinished round? Checked practice answers remain saved; unfinished test answers will not be graded.')){session=null;save();render()}}
+ if(a==='home'){session=null;save();go('Practice')}
+ if(a==='retry'){const ids=session.items.filter(i=>!isCorrect(i)).map(i=>i.id);start('quick',ids)}
+ if(a==='again')start(session.mode);
+ if(a==='flip'){flipped=true;flash()}
+ if(a==='newcards'){initDeck();flash()}
+ if(a==='card-again'||a==='card-known'){const id=deck[flashIndex],old=data.cards[id]||{stage:0};const stage=a==='card-known'?Math.min(4,old.stage+1):0;data.cards[id]={stage,due:Date.now()+(stage?[0,1,3,7,14][stage]*86400000:60000)};save();flashIndex++;flipped=false;flash()}
+ if(a==='model'){$('model').innerHTML=`<div class="feedback"><h3>Model explanation</h3><p>${esc(EXPLAIN[explainIndex][2])}</p><h3>Did your answer include…</h3>${EXPLAIN[explainIndex][3].map(s=>`<label><input type="checkbox"> ${esc(s)}</label>`).join('')}</div>`;b.disabled=true}
+ if(a==='nextexplain'){explainIndex=(explainIndex+1)%EXPLAIN.length;explain()}
+ if(a==='reset'&&confirm('Delete all quiz scores, flashcard schedules, and the saved round for this learner? Other learners will be kept.')){data=fresh();session=null;deck=null;save();render()}
+});
+$('main').addEventListener('input',e=>{if(e.target.id==='ph'){const p=Number(e.target.value),d=7-p;$('ph-value').textContent=p;$('ph-result').textContent=d===0?'Same H⁺ concentration as pH 7.':d>0?`${(10**d).toLocaleString()} times as much H⁺ as at pH 7.`:`1/${(10**(-d)).toLocaleString()} as much H⁺ as at pH 7.`}});
+$('main').addEventListener('change',e=>{if(e.target.id==='study-level'){data.studyLevel=e.target.value;deck=null;save();render()}});
+$('nav').addEventListener('click',e=>{const b=e.target.closest('[data-nav]');if(b)go(b.dataset.nav)});
+$('learner').addEventListener('change',()=>{save();profile=$('learner').value;try{localStorage.setItem('biology-active-learner',profile)}catch{}data=read();session=data.session;deck=null;go('Practice')});
+// Biology arcade: independent, persistent game state for each learner.
+const GAME_INFO={boss:['🧬','Enzyme Arena','Battle three lab monsters. Build answer combos, charge a shield, and recover with a limited medkit.'],escape:['🔐','Escape the Lab','Five locked rooms. Read the evidence, crack the codes, and bring the lab back online.'],forge:['⚗️','Molecule Forge','Choose your ingredients, control the water, and build—or break—the requested molecule.'],match:['🧠','Memory Matrix','Flip cards to pair a biology concept with its meaning. Remember the science and the board.']};
+const randInt=(lo,hi)=>lo+Math.floor(Math.random()*(hi-lo+1));
+function arcadeData(){if(!data.arcade)data.arcade={active:null,bests:{},plays:0,wins:0};return data.arcade}
+function activeGame(){return arcadeData().active}
+function gameBtn(label,action,cls=''){return `<button type="button" data-game-action="${action}" class="${cls}">${label}</button>`}
+function gameSave(){save()}
+function gameHeader(g){return `<div class="row between"><span class="eyebrow">${GAME_INFO[g.kind][0]} ${GAME_INFO[g.kind][1]}</span>${gameBtn('Arcade lobby','lobby','ghost')}</div>`}
+function gameFinish(won){const g=activeGame();if(!g||g.finished)return;g.finished=true;g.won=won;const a=arcadeData();a.plays++;a.wins+=won?1:0;a.bests[g.kind]=Math.max(a.bests[g.kind]||0,g.score);gameSave()}
+function renderGames(){const a=arcadeData(),g=a.active;if(g&&!g.paused){if(g.finished)return gameResults(g);if(g.kind==='boss')return bossRender(g);if(g.kind==='escape')return escapeRender(g);if(g.kind==='forge')return forgeRender(g);if(g.kind==='match')return matchRender(g)}$('main').innerHTML=`<div class="arcade-hero"><div class="eyebrow">New / Biology arcade</div><h1>Play your way<br>to “I get it.”</h1><p>Four different games. Real biology. No timers, no pressure—just one more try.</p><div class="row"><span class="arcade-pill">${a.wins} wins</span><span class="arcade-pill">${a.plays} completed runs</span>${g&&!g.finished?gameBtn('Resume '+GAME_INFO[g.kind][1],'resume','primary'):''}</div></div><div class="two section">${Object.entries(GAME_INFO).map(([k,v])=>`<article class="card game-card"><div class="game-icon" aria-hidden="true">${v[0]}</div><div class="row between"><h2>${v[1]}</h2><span class="pill">Best ${a.bests[k]||0}</span></div><p class="muted">${v[2]}</p><button class="primary" data-new-game="${k}">Play ${v[1]}</button></article>`).join('')}</div><div class="notice">Games use the topics in your practice test. Arcade scores are separate from quiz accuracy. Your current run and best scores save for the selected learner. All science challenges are untimed; take as long as you need.</div>`}
+function newGame(kind){const current=activeGame();if(current&&!current.finished&&!confirm('Start a new game and replace your unfinished arcade run? Your best scores and regular practice stay saved.'))return;const base={kind,score:0,finished:false,paused:false,feedback:null};if(kind==='boss'){Object.assign(base,{hp:5,bossHP:6,stage:0,combo:0,charge:0,shield:false,medkit:true,index:0,deck:shuffle(BANK.filter(q=>!q.multi&&q.difficulty!=='challenge')).map(q=>({id:q.id,order:shuffle(q.options.map((_,i)=>i))})),answered:false})}else if(kind==='escape'){Object.assign(base,{rooms:makeRooms(),index:0,attempts:0,hints:0,hintUsed:false,solved:false,input:''})}else if(kind==='forge'){Object.assign(base,{recipes:makeRecipes(),index:0,inventory:[0,0,0,0,0,0],water:0,reaction:'join',errors:0,solved:false})}else if(kind==='match'){const pairs=shuffle(MATCH_PAIRS).slice(0,6);Object.assign(base,{cards:shuffle(pairs.flatMap((p,i)=>[{pair:i,text:p[0],type:'CONCEPT'},{pair:i,text:p[1],type:'MEANING'}])),open:[],matched:[],turns:0})}else return;arcadeData().active=base;gameSave();view='Games';render();window.scrollTo({top:0})}
+function gameResults(g){const titles={boss:'Lab monsters defeated!',escape:'You escaped the lab!',forge:'Master builder unlocked!',match:'Matrix restored!'};$('main').innerHTML=`<div class="question">${gameHeader(g)}<div class="card game-finish section"><div class="game-trophy" aria-hidden="true">${g.won?'🏆':'🛠️'}</div><div class="eyebrow">${g.won?'Mission complete':'Research continues'}</div><h1>${g.won?titles[g.kind]:'The lab needs a rematch.'}</h1><div class="score">${g.score}</div><p>points · Best ${arcadeData().bests[g.kind]||0}</p><p class="muted">${g.won?'You earned the points by connecting biology ideas. Play again for new combinations.':'Every explanation is a clue for your next run. Try a medkit or charge your shield before the next attack.'}</p><div class="row">${gameBtn('Play again','replay','primary')}${gameBtn('Choose another game','lobby')}</div></div></div>`}
+const MONSTERS=[['🦠','The Substrate Slime','“I bet you think enzymes get used up!”'],['🐉','The Denaturation Dragon','“Can your knowledge survive the heat?”'],['👾','The pH Phantom','“One little pH unit… one big difference.”']];
+function bossRender(g){const q=BANK.find(q=>q.id===g.deck[g.index].id),monster=MONSTERS[g.stage];$('main').innerHTML=`<div class="question">${gameHeader(g)}<div class="arena section"><div class="row between"><span>Round ${g.stage+1} / 3</span><strong>${g.score} points · Combo ${g.combo}</strong></div><div class="monster ${g.answered?'monster-hit':''}" aria-hidden="true">${monster[0]}</div><h2>${monster[1]}</h2><p>${monster[2]}</p><label>Boss health: ${g.bossHP} / 6</label><div class="boss-meter"><span style="width:${g.bossHP/6*100}%"></span></div><div class="row between"><strong aria-label="Your health ${g.hp} of 5">${'♥'.repeat(g.hp)}${'♡'.repeat(5-g.hp)} · ${g.hp}/5</strong><span>${g.shield?'🛡️ Shield armed':'Shield charge: '+g.charge+'/2'}</span></div></div><div class="row section"><button data-game-action="shield" ${g.charge<2||g.shield||g.answered?'disabled':''}>Arm shield · 2 charge</button><button data-game-action="heal" ${!g.medkit||g.hp>=5||g.answered?'disabled':''}>Medkit +2 ♥ · ${g.medkit?'1 left':'used'}</button></div><p class="small">Correct: 2 damage (3 on a combo of 3+). Wrong: lose 1 heart unless shielded. One medkit per run.</p><div class="card"><h2>${esc(q.prompt)}</h2>${visual(q.visual)}<div class="options">${g.deck[g.index].order.map(i=>`<button class="option ${g.answered&&i===q.answers[0]?'correct':''}" data-boss-choice="${i}" ${g.answered?'disabled':''}>${esc(q.options[i])}${g.answered&&i===q.answers[0]?' ✓':''}</button>`).join('')}</div>${g.feedback?`<div class="feedback ${g.feedback.ok?'':'wrong'}" role="status"><strong>${esc(g.feedback.title)}</strong><p>${esc(q.explain)}</p></div>`:''}${g.answered?gameBtn(g.hp===0?'See results':g.bossHP===0?(g.stage===2?'Claim victory':'Next monster'):'Next attack','boss-next','primary'):''}</div></div>`}
+function bossAnswer(i){const g=activeGame();if(g.answered||g.finished)return;const q=BANK.find(q=>q.id===g.deck[g.index].id),ok=i===q.answers[0];g.answered=true;if(ok){g.combo++;const damage=g.combo>=3?3:2;g.bossHP=Math.max(0,g.bossHP-damage);g.score+=100+Math.min(g.combo-1,4)*25;g.charge=Math.min(2,g.charge+1);g.feedback={ok:true,title:`Hit! ${damage} damage${g.combo>=3?' · combo bonus!':''}`}}else{g.combo=0;const blocked=g.shield;if(blocked)g.shield=false;else g.hp--;g.feedback={ok:false,title:blocked?'Shield blocked the hit. Here’s the science.':'You lost 1 heart. Learn the counterattack.'}}gameSave();renderGames()}
+function makeRooms(){const p=randInt(6,9),drop=randInt(1,3),n=randInt(4,9),optimal=randInt(2,5),amount=randInt(2,8);return [
+{title:'The acid vault',icon:'🧪',story:`A leak changes the solution from pH ${p} to pH ${p-drop}. Enter the factor by which H⁺ concentration INCREASES to unlock the valve.`,answer:String(10**drop),hint:'Each downward pH step multiplies H⁺ by 10. Multiply once per step.',explain:`The drop is ${drop} unit${drop===1?'':'s'}: 10^${drop} = ${10**drop}.`,input:'number',unit:'Increase factor'},
+{title:'The protein bridge',icon:'🌉',story:`The bridge needs a linear chain of ${n} amino acids. In the simplified dehydration model, how many water molecules are released when that chain forms?`,answer:String(n-1),hint:'Count the links connecting the units in one linear chain.',explain:`${n} amino acids form ${n-1} peptide links and release ${n-1} waters in the simplified model.`,input:'number',unit:'Water molecules'},
+{title:'The enzyme engine',icon:'⚙️',story:'Restart the engine at the tested pH with the greatest enzyme activity. Enter that pH.',table:table(['Test pH','Activity (relative units)'],[[optimal-1,20],[optimal,90],[optimal+1,35],[optimal+2,5]]),answer:String(optimal),hint:'Compare activity values, not just pH values. The biggest pH is not necessarily the best.',explain:`The largest measured activity is 90 units at pH ${optimal}. This measures activity, not the amount of enzyme.`,input:'number',unit:'Best tested pH'},
+{title:'The evidence locker',icon:'🔎',story:'A tube of BTB turns yellow. The guard claims this proves that CO₂ was produced. Enter the ONE word that BTB actually detects: acidity, protein, or oxygen.',answer:'acidity',hint:'Other acids can turn BTB yellow even when no CO₂ was produced.',explain:'BTB indicates acidity/basicity. Yellow supports acidic conditions; CO₂ is one possible cause, not the only cause.',input:'text',unit:'Evidence word'},
+{title:'The final power cell',icon:'⚡',story:`An enzyme makes ${amount*10} mg of product in 10 seconds, starting from 0 mg. Enter its average production rate in mg/s to power the exit.`,answer:String(amount),hint:'Rate = change in product ÷ elapsed time.',explain:`${amount*10} mg ÷ 10 seconds = ${amount} mg/s.`,input:'number',unit:'Average rate (mg/s)'}]}
+function escapeRender(g){const r=g.rooms[g.index];$('main').innerHTML=`<div class="question">${gameHeader(g)}<div class="room-map section" aria-label="Escape progress">${g.rooms.map((r,i)=>`<span class="${i<g.index?'done':i===g.index?'current':''}">${i<g.index?'✓':i+1}<small>${i<g.index?'Open':i===g.index?'Here':'Locked'}</small></span>`).join('')}</div><div class="card escape-room section"><div class="row between"><span class="pill">Room ${g.index+1} / 5</span><strong>${g.score} points</strong></div><div class="game-icon" aria-hidden="true">${r.icon}</div><h2>${r.title}</h2><p>${r.story}</p>${r.table?`<div class="visual">${r.table}</div>`:''}<label for="escape-code">${r.unit}</label><div class="row"><input class="lock-input" id="escape-code" type="${r.input}" ${r.input==='number'?'min="0" step="any" inputmode="decimal"':'autocomplete="off"'} value="${esc(g.input)}" ${g.solved?'disabled':''} aria-describedby="lock-result"><button class="primary" data-game-action="unlock" ${g.solved?'disabled':''}>Unlock</button></div><div id="lock-result" role="status">${g.feedback?`<div class="feedback ${g.feedback.ok?'':'wrong'}">${esc(g.feedback.text)}</div>`:''}</div>${g.solved?gameBtn(g.index===4?'Open the exit':'Enter next room','room-next','primary'):gameBtn(g.hintUsed?'Hint shown':'Ask the lab robot · −10 points','room-hint','ghost')}${g.hintUsed?`<p class="hint">🤖 ${r.hint}</p>`:''}<p class="small">Each room is worth 100 points. Wrong codes cost 20; the optional hint costs 10. No time limit and no lockouts.</p></div></div>`}
+function escapeCheck(){const g=activeGame();if(g.solved||g.finished)return;const r=g.rooms[g.index],value=g.input.trim().toLowerCase();if(!value){g.feedback={ok:false,text:'Enter a code first. No points lost.'}}else if(r.input==='number'?Number(value)===Number(r.answer):value===r.answer){g.solved=true;const points=Math.max(0,100-g.attempts*20-(g.hintUsed?10:0));g.score+=points;g.feedback={ok:true,text:`Unlocked! +${points} points. ${r.explain}`}}else{g.attempts++;g.feedback={ok:false,text:'The door is still locked. Check your reasoning. '+(g.attempts>=2?r.hint:'Try the robot’s hint if you need a clue.')}}gameSave();renderGames()}
+const INGREDIENTS=['Amino acids','Glucose molecules','Glycerol molecules','Fatty acids','Polypeptide chains','Disaccharides'];
+function makeRecipes(){const n=randInt(3,7),m=randInt(4,8);return shuffle([
+{name:`Build a ${n}-residue polypeptide`,target:`Join ${n} free amino acids into one linear chain.`,inventory:[n,0,0,0,0,0],reaction:'join',water:n-1,explain:`${n} amino acids need ${n-1} peptide links. In the simplified condensation model, forming them releases ${n-1} waters.`,product:'🟣'+'—🟣'.repeat(n-1)},
+{name:`Break a ${m}-residue polypeptide`,target:`Completely hydrolyze ONE chain containing ${m} amino-acid residues. Start with the chain, not free amino acids.`,inventory:[0,0,0,0,1,0],reaction:'split',water:m-1,explain:`The single chain has ${m-1} peptide bonds. Hydrolysis uses ${m-1} waters and releases ${m} amino acids.`,product:Array(m).fill('🟣').join(' + ')},
+{name:'Build a two-sugar molecule',target:'Join two glucose molecules into one disaccharide.',inventory:[0,2,0,0,0,0],reaction:'join',water:1,explain:'Two glucose molecules join through one glycosidic link with net release of one water.',product:'⬡—⬡'},
+{name:'Take a disaccharide apart',target:'Completely hydrolyze ONE disaccharide into its two monosaccharides.',inventory:[0,0,0,0,0,1],reaction:'split',water:1,explain:'One water is used to hydrolyze the one link between the two sugar units.',product:'⬡ + ⬡'},
+{name:'Assemble an energy store',target:'Build ONE triglyceride from glycerol and fatty acids, using the simplified condensation model.',inventory:[0,0,1,3,0,0],reaction:'join',water:3,explain:'One glycerol joins three fatty acids through three ester links, with net release of three waters in this model.',product:'🟡 + 3 tails → triglyceride'}])}
+function forgeRender(g){const r=g.recipes[g.index];$('main').innerHTML=`<div class="question">${gameHeader(g)}<div class="row between section"><span class="pill">Blueprint ${g.index+1} / ${g.recipes.length}</span><strong>${g.score} points</strong></div><div class="card section"><h2>${r.name}</h2><p>${r.target}</p><p class="small">Choose only the starting materials. Then set the reaction and number of waters. The counters can be tapped or operated with the keyboard.</p><div class="ingredients">${INGREDIENTS.map((label,i)=>`<div class="ingredient"><strong>${label}</strong><div class="row"><button data-ingredient="${i}" data-delta="-1" aria-label="Remove one ${label.toLowerCase()}" ${g.solved||g.inventory[i]===0?'disabled':''}>−</button><output aria-label="Number of ${label.toLowerCase()}">${g.inventory[i]}</output><button data-ingredient="${i}" data-delta="1" aria-label="Add one ${label.toLowerCase()}" ${g.solved||g.inventory[i]>=12?'disabled':''}>+</button></div></div>`).join('')}</div><div class="two section"><label>Reaction<select id="forge-reaction" ${g.solved?'disabled':''}><option value="join" ${g.reaction==='join'?'selected':''}>Join · dehydration · release water</option><option value="split" ${g.reaction==='split'?'selected':''}>Split · hydrolysis · consume water</option></select></label><label>Water molecules<input id="forge-water" class="lock-input" type="number" min="0" max="12" step="1" value="${g.water}" ${g.solved?'disabled':''}></label></div><div role="status">${g.feedback?`<div class="feedback ${g.feedback.ok?'':'wrong'}"><strong>${g.solved?'Reaction successful!':g.feedback.ok?'Recipe clue':'Check the recipe.'}</strong><p>${esc(g.feedback.text)}</p>${g.solved?`<div class="reaction-product" aria-label="Schematic product illustration">${r.product}</div>`:''}</div>`:''}</div><div class="row section">${g.solved?gameBtn(g.index===g.recipes.length-1?'Claim your builder badge':'Next blueprint','forge-next','primary'):gameBtn('⚗️ React!','react','primary')+gameBtn('Show recipe clue','forge-hint','ghost')}</div><p class="small">100 points per blueprint, −15 per failed reaction; clues are free. These are introductory reaction models, not full cellular mechanisms.</p></div></div>`}
+function forgeCheck(){const g=activeGame();if(g.solved||g.finished)return;const r=g.recipes[g.index],ingredients=r.inventory.every((n,i)=>n===g.inventory[i]);let reason='';if(!ingredients)reason='The starting ingredients do not match the target. '+r.target;else if(g.reaction!==r.reaction)reason='The ingredients are right. Does this target build links or break links?';else if(Number(g.water)!==r.water)reason='The ingredients and reaction are right. Count the links formed or broken: each needs one water released or consumed in this model.';if(reason){g.errors++;g.feedback={ok:false,text:reason}}else{g.solved=true;const points=Math.max(0,100-15*g.errors);g.score+=points;g.feedback={ok:true,text:`+${points} points. ${r.explain}`}}gameSave();renderGames()}
+const MATCH_PAIRS=[['Peptide bond','Covalent link between amino-acid residues'],['Hydrolysis','Uses water to split a covalent link'],['Dehydration synthesis','Joins units with net release of water'],['Primary structure','The order of amino acids in a protein'],['Tertiary structure','The overall fold of one polypeptide'],['Quaternary structure','The arrangement of multiple polypeptide subunits'],['Enzyme','Catalyst that lowers activation energy'],['Phospholipid','Polar head and two fatty-acid tails'],['Nucleotide','Building block of DNA or RNA'],['Hydrogen bond','Attraction involving partial charges'],['Low pH','Higher hydrogen-ion concentration'],['Yellow BTB','Evidence of acidic conditions'],['Negative control','An untreated baseline for comparison'],['Active site','Region where suitable substrate binds'],['Denaturation','Disruption of a protein’s normal fold'],['Triglyceride','Glycerol joined to three fatty acids']];
+function matchRender(g){const matched=g.matched.length/2;$('main').innerHTML=`<div class="question">${gameHeader(g)}<div class="row between section"><h2>Find the scientific connection.</h2><span class="pill">${matched} / 6 pairs · ${g.turns} turns</span></div><p>Match each CONCEPT with its MEANING. Tap two cards, read them, then clear mismatches when you are ready.</p><div class="memory-grid">${g.cards.map((c,i)=>{const done=g.matched.includes(i),open=g.open.includes(i)||done;return `<button class="memory-card ${open?'flipped':''} ${done?'matched':''}" data-memory="${i}" ${done||g.open.includes(i)||g.open.length===2?'disabled':''} aria-label="${open?esc(c.type+': '+c.text):'Face-down card '+(i+1)}">${open?`<small>${done?'✓ MATCHED':c.type}</small><span>${esc(c.text)}</span>`:`<span class="card-back" aria-hidden="true">✦</span><small>Card ${i+1}</small>`}</button>`}).join('')}</div><div role="status">${g.feedback?`<div class="feedback ${g.feedback.ok?'':'wrong'}">${esc(g.feedback.text)}</div>`:''}</div><div class="row section">${g.open.length===2?gameBtn('Turn them back over','close-pair','primary'):''}${matched===6?gameBtn('Collect your score','match-finish','primary'):''}</div><p class="small">Start at 600 points. Each mismatched pair costs 25; points never fall below zero. No speed bonus—read the meanings.</p></div>`}
+function memoryFlip(i){const g=activeGame();if(g.finished||g.open.length===2||g.matched.includes(i)||g.open.includes(i))return;g.open.push(i);g.feedback=null;if(g.open.length===2){g.turns++;const [a,b]=g.open,ca=g.cards[a],cb=g.cards[b];if(ca.pair===cb.pair){g.matched.push(a,b);g.open=[];g.feedback={ok:true,text:`Connected: ${ca.type==='CONCEPT'?ca.text:cb.text} — ${ca.type==='MEANING'?ca.text:cb.text}.`}}else g.feedback={ok:false,text:'Not a pair. Read both, remember their locations, and try a different connection.'};}const misses=g.turns-g.matched.length/2;g.score=Math.max(0,600-misses*25);gameSave();renderGames()}
+$('main').addEventListener('click',e=>{const b=e.target.closest('button');if(!b||b.disabled)return;if(b.dataset.newGame){newGame(b.dataset.newGame);return}if(b.dataset.openArcade!==undefined){go('Games');return}const g=activeGame();if(!g||view!=='Games')return;const a=b.dataset.gameAction;
+if(a==='lobby'){g.paused=true;gameSave();renderGames();return}if(a==='resume'){g.paused=false;gameSave();renderGames();return}if(a==='replay'){newGame(g.kind);return}if(g.finished)return;
+if(b.dataset.bossChoice!==undefined&&g.kind==='boss')return bossAnswer(Number(b.dataset.bossChoice));
+if(a==='shield'&&g.kind==='boss'&&!g.answered&&g.charge>=2&&!g.shield){g.shield=true;g.charge-=2}
+if(a==='heal'&&g.kind==='boss'&&!g.answered&&g.medkit&&g.hp<5){g.hp=Math.min(5,g.hp+2);g.medkit=false}
+if(a==='boss-next'&&g.kind==='boss'&&g.answered){if(g.hp===0){gameFinish(false)}else if(g.bossHP===0&&g.stage===2){gameFinish(true)}else{if(g.bossHP===0){g.stage++;g.bossHP=6;g.score+=150}g.index=(g.index+1)%g.deck.length;g.answered=false;g.feedback=null}}
+if(a==='unlock'&&g.kind==='escape')return escapeCheck();
+if(a==='room-hint'&&g.kind==='escape'&&!g.solved){g.hintUsed=true}
+if(a==='room-next'&&g.kind==='escape'&&g.solved){if(g.index===4)gameFinish(true);else{g.index++;g.input='';g.solved=false;g.attempts=0;g.hintUsed=false;g.feedback=null}}
+if(b.dataset.ingredient!==undefined&&g.kind==='forge'&&!g.solved){const i=Number(b.dataset.ingredient);g.inventory[i]=Math.max(0,Math.min(12,g.inventory[i]+Number(b.dataset.delta)));g.feedback=null}
+if(a==='react'&&g.kind==='forge')return forgeCheck();
+if(a==='forge-hint'&&g.kind==='forge'&&!g.solved){g.feedback={ok:true,text:g.recipes[g.index].explain}}
+if(a==='forge-next'&&g.kind==='forge'&&g.solved){if(g.index===g.recipes.length-1)gameFinish(true);else{g.index++;g.inventory=[0,0,0,0,0,0];g.water=0;g.reaction='join';g.errors=0;g.solved=false;g.feedback=null}}
+if(b.dataset.memory!==undefined&&g.kind==='match')return memoryFlip(Number(b.dataset.memory));
+if(a==='close-pair'&&g.kind==='match'){g.open=[];g.feedback=null}
+if(a==='match-finish'&&g.kind==='match'&&g.matched.length===12)gameFinish(true);
+if(a||b.dataset.ingredient!==undefined){gameSave();renderGames()}
+});
+$('main').addEventListener('input',e=>{const g=activeGame();if(!g||g.finished)return;if(e.target.id==='escape-code'&&g.kind==='escape')g.input=e.target.value;if(e.target.id==='forge-water'&&g.kind==='forge')g.water=e.target.value;gameSave()});
+$('main').addEventListener('change',e=>{const g=activeGame();if(g?.kind==='forge'&&e.target.id==='forge-reaction'){g.reaction=e.target.value;gameSave()}});
+$('main').addEventListener('keydown',e=>{if(e.key==='Enter'&&e.target.id==='escape-code'){e.preventDefault();escapeCheck()}});
+
+try{const selected=localStorage.getItem('biology-active-learner');if(['1','2','3'].includes(selected)){profile=selected;$('learner').value=profile}}catch{}data=read();session=data.session;render();
+</script></body></html>
